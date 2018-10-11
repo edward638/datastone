@@ -2,7 +2,7 @@ TEAM MEMBERS: Remy Freire, Jeffrey He, Neil Luo, Junmo Ryang, Edward Zhuang
 
 Work done:
 
-Remy Freire: Created general description of application, assumptions about data, description of web interface, and general plan for populating database.
+Remy Freire:Hello Created general description of application, assumptions about data, description of web interface, and general plan for populating database.
 
 Jeffrey He: Devised metrics to analyze offensive and defensive efficiencies of players, along with a scoring mechanism for fantasy league match-ups.
 
@@ -11,3 +11,4 @@ Neil Luo: Created sample SQL code and statement files.
 Junmo Ryang: Worked with Edward Zhuang to develop E/R diagram for database design and list of database tables with keys declared.
 
 Edward Zhuang: Worked with Junmo Ryang to develop E/R diagram for database design and list of database tables with keys declared.
+
