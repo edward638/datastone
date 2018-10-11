@@ -41,4 +41,4 @@ The web interface will likely contain six pages to view: 1) weekly matchups and 
 
 ## E/R Diagram
 
-![alt text](images/er_diagram.PNG)
+![alt text](images/er_diagram.png)
