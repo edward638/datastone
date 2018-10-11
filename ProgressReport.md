@@ -41,15 +41,24 @@ The web interface will likely contain six pages to view: 1) weekly matchups and 
 
 **Stats Side:**
 Player (__playerID__, team, name)
+
 Game (__gameID__, week)
+
 PlayedIn (__playerID__, __gameID__, goals, catches, assists, completions, blocks, turnovers)
+
 IsOn (__playerID__, __teamID__)
 
+
 **Fantasy Side:**
+
 FantasyTeam (__teamID__, name, wins, losses)
+
 FantasyGame (__fantasygameID__, week) 
+
 FantasyPlayedIn (__teamID__, __fantasygameID__, won?, score)
+
 User (__userID__, username, password)
+
 OwnedBy (__userID__, __teamID__)
 
 ## E/R Diagram
