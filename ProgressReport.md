@@ -38,3 +38,7 @@ The web interface will likely contain six pages to view: 1) weekly matchups and 
 6.  The final page for users is a designed for trading. At any point during the season, two users can trade players with one another, which is another common feature of fantasy football. A user would be able to select another user to trade with from the drop-down menu, then select which of their player(s) they’re interested in trading for the other user’s player(s). The other player would have to approve this trade (a notification would appear in their trade page), and if approved, the players would be swapped between the two rosters.
 
 ## Schema Design
+
+## E/R Diagram
+
+![alt text](images/er_diagram.PNG)
