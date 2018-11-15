@@ -1,0 +1,12 @@
+We need the following files to be written.
+
+INSERT/UPDATE
+reset.sql
+add-user.sql
+roster-player.sql
+toggle-active.sql
+simulate-week.sql
+
+QUERY
+bottom half of remys_raws.sql
+more tbd
