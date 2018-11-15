@@ -19,3 +19,5 @@ FOR wk IN 1..17
 
 	TRUNCATE TABLE Temporary;
 END LOOP;
+
+DROP TABLE Temporary;

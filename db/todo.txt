@@ -1,4 +1,4 @@
-We need the following files to be written.
+We need the following files to be written:
 
 INSERT/UPDATE
 reset.sql
@@ -10,3 +10,9 @@ simulate-week.sql
 QUERY
 bottom half of remys_raws.sql
 more tbd
+
+
+To setup the database:
+run create.sql
+run copy-fixed.sql
+run copy-polled.sql

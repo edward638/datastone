@@ -17,3 +17,5 @@ SELECT *, 'N'
 FROM Temporary;
 
 TRUNCATE TABLE Temporary;
+
+DROP TABLE Temporary;
