@@ -15,3 +15,9 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
+
+class Player(db.Model):
+    playerid = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(256))
+    def __repr__(self):
+        return '<Post {}>'.format(self.name)
