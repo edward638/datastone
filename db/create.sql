@@ -1,5 +1,5 @@
 CREATE TABLE Players
-(Player VARCHAR(256) NOT NULL PRIMARY KEY,
+(PlayerID INTEGER NOT NULL PRIMARY KEY,
  GoalsAvg REAL NOT NULL CHECK (GoalsAvg >= 0),
  AssistsAvg REAL NOT NULL CHECK (AssistsAvg >= 0),
  BlocksAvg REAL NOT NULL CHECK (BlocksAvg >= 0)
@@ -12,7 +12,7 @@ CREATE TABLE Players
 
 CREATE TABLE PlayerPerformance
 (Week DECIMAL(2,0) NOT NULL CHECK (Week >= 1 and Week <= 17),
- Player VARCHAR(256) NOT NULL REFERENCES Players(Player),
+ PlayerID INTEGER NOT NULL REFERENCES Players(PlayerID),
  Goals DECIMAL(3,0) NOT NULL CHECK (Goals >= 0),
  Assists DECIMAL(3,0) NOT NULL CHECK (Assists >= 0),
  Blocks DECIMAL(3,0) NOT NULL CHECK (Blocks >= 0),
@@ -28,12 +28,12 @@ CREATE TABLE Users
  TeamName VARCHAR(256) NOT NULL);
 
 CREATE TABLE Rosters
-(UserID DECIMAL(2,0) NOT NULL REFERENCES Users(UserID),
- Player VARCHAR(256) NOT NULL REFERENCES Players(Player) PRIMARY KEY,
+(UserID INTEGER NOT NULL REFERENCES Users(UserID) PRIMARY KEY,
+ PlayerID INTEGER NOT NULL REFERENCES Players(PlayerID),
  Active CHAR(1) NOT NULL CHECK (Active = 'Y' or Active = 'N'));
 
 CREATE TABLE WeeklyScores
 (Week DECIMAL(2,0) NOT NULL CHECK (Week >= 1 and Week <= 17),
- UserID DECIMAL(2,0) NOT NULL REFERENCES Users(UserID),
+ UserID INTEGER NOT NULL REFERENCES Users(UserID),
  TeamScore REAL NOT NULL,
  PRIMARY KEY(Week, UserID));
