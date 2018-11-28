@@ -1,5 +1,5 @@
-from app import db
-
+from app import db, login
+from flask_login import UserMixin
 
 # class User(db.Model):
 #     AGENT_CODE = db.Column(db.String(6), primary_key=True)
@@ -9,13 +9,17 @@ from app import db
 #     PHONE_NO = db.Column(db.String(15))
 #     COUNTRY = db.Column(db.String(25))
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     team_name = db.Column(db.String(64), index=True)
+    username = db.Column(db.String(64), index=True)
 
     def __repr__(self):
         return '<User {}>'.format(self.team_name)
 
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
 
 # class Player(db.Model):
 #     id = db.Column(db.Integer, primary_key=True)
