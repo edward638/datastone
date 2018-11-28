@@ -45,6 +45,7 @@ class Player(db.Model):
     throwaways = db.Column(db.REAL)
     drops = db.Column(db.REAL)
     callahans = db.Column(db.REAL)
+    owner = db.Column(db.Integer)
 
     def __repr__(self):
         return '<Player {}>'.format(self.name)
