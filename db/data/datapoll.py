@@ -3,7 +3,7 @@ import sys
 import csv
 import os
 import warnings
-from scipy.stats import poisson
+from numpy.random import normal
 
 #read a file
 def simple_read(filename):
@@ -23,8 +23,8 @@ def simple_read(filename):
 				rows.append(row)
 	return rows
 
-#poll from poisson with average from values read in
-def poll_poisson():
+#poll from normal with average from values read in
+def poll_normal():
 	#initialize polled rows
 	polled_rows = []
 	header = ["player", "goals", "assists", "blocks", "catches", "completions", "throwaways", "drops", "callahans"]
@@ -35,14 +35,14 @@ def poll_poisson():
 	for row in rows:
 		#generate polled row
 		player = row[0]
-		goals = poisson.rvs(float(row[1]))
-		assists = poisson.rvs(float(row[2]))
-		blocks = poisson.rvs(float(row[3]))
-		catches = poisson.rvs(float(row[4]))
-		completions = poisson.rvs(float(row[5]))
-		throwaways = poisson.rvs(float(row[6]))
-		drops = poisson.rvs(float(row[7]))
-		callahans = poisson.rvs(float(row[8]))
+		goals = round(abs(normal(float(row[1]), float(row[2]))))
+		assists = round(abs(normal(float(row[3]), float(row[4]))))
+		blocks = round(abs(normal(float(row[5]), float(row[6]))))
+		catches = round(abs(normal(float(row[7]), float(row[8]))))
+		completions = round(abs(normal(float(row[9]), float(row[10]))))
+		throwaways = round(abs(normal(float(row[11]), float(row[12]))))
+		drops = round(abs(normal(float(row[13]), float(row[14]))))
+		callahans = round(abs(normal(float(row[15]), float(row[16]))))
 		polled_rows.append([player, goals, assists, blocks, catches, completions, throwaways, drops, callahans])
 
 	#return polled rows
@@ -69,5 +69,5 @@ except:
 	warnings.warn("invalid week; writing values to week 0")
 
 #main statments
-polled_rows = poll_poisson()
+polled_rows = poll_normal()
 simple_write(os.path.join('polleddata', 'wk' + str(week) + '_AUDL_2018.csv'), polled_rows)
