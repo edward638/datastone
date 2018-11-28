@@ -2,6 +2,7 @@
 import csv
 import os
 import warnings
+import statistics
 
 #helper functions
 def add_to_total_record(player, record):
@@ -17,6 +18,12 @@ def print_records(records):
 		print("----------record", i)
 		for player in record:
 			print(player, record[player])
+
+def avg(performance, games):
+	return statistics.mean(performance + [0]*(games-len(performance)))
+
+def sd(performance, games):
+	return statistics.stdev(performance + [0]*(games-len(performance)))
 
 #read an AUDL data file
 #returns : (number of games, list of data in dictionaries)
@@ -218,7 +225,9 @@ def read_AUDL_file(filename, debug = False):
 def fix_raw_data(directory):
 	#initialize rows
 	rows = []
-	header = ["player", "goals", "assists", "blocks", "catches", "completions", "throwaways", "drops", "callahans"]
+	header = ["player", "goals_avg", "goals_sd", "assists_avg", "assists_sd", "blocks_avg", "blocks_sd",
+				"catches_avg", "catches_sd", "completions_avg", "completions_sd", "throwaways_avg", "throwaways_sd",
+				"drops_avg", "drops_sd", "callahans_avg", "callahans_sd"]
 	rows.append(header)
 	for filename in os.listdir(directory):
 		#read in data
@@ -227,10 +236,10 @@ def fix_raw_data(directory):
 		#generate row
 		players = sorted(records[0])
 		for player in players:
-			row = [player, sum(records[0][player])/games, sum(records[1][player])/games,
-				sum(records[2][player])/games, sum(records[3][player])/games,
-				sum(records[4][player])/games, sum(records[5][player])/games,
-				sum(records[6][player])/games, sum(records[7][player])/games]
+			row = [player, avg(records[0][player], games), sd(records[0][player], games), avg(records[1][player], games), sd(records[1][player], games),
+					avg(records[2][player], games), sd(records[2][player], games), avg(records[3][player], games), sd(records[3][player], games),
+					avg(records[4][player], games), sd(records[4][player], games), avg(records[5][player], games), sd(records[5][player], games),
+					avg(records[6][player], games), sd(records[6][player], games), avg(records[7][player], games), sd(records[7][player], games)]
 			rows.append(row)
 
 	#return rows
