@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="#">
+        <img src="/static/img/logo.jpg" width="160" height="80" alt="">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/profile">My Profile</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/draft">Draft</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/standings">Standings</a>
+            </li>
+
+            <li class="nav-item">
+              {% if current_user.is_anonymous %}
+                <a class="nav-link" href="/login">Login</a>
+                {% else %}
+                <a class="nav-link" href="/logout">Logout</a>
+              {% endif %}
+            </li>
+
+
+        </ul>
+{#>>>>>>> 65f7a57bb507673ab8caba13f6eb3cecf09be1ff#}
+{##}
+{#<nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+{#  <a class="navbar-brand" href="#">#}
+{#        <img src="../../static/img/logo.jpg" width="160" height="80" alt="">#}
+{#  </a>#}
+{#  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">#}
+{#    <span class="navbar-toggler-icon"></span>#}
+{#  </button>#}
+{#  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">#}
+{#    <div class="navbar-nav">#}
+{#      <a class="nav-item nav-link" href="/">Home</a>#}
+{#      <a class="nav-item nav-link" href="/profile/sample">My Profile</a>#}
+{#      <a class="nav-item nav-link" href="/draft">Draft</a>#}
+{#      <a class="nav-item nav-link" href="/standings">Standings</a>#}
+{#      <a class="nav-item nav-link" href="/login">Login</a>#}
+{#    </div>#}
+{#  </div>#}
+</nav>
+
+</body>
+</html>

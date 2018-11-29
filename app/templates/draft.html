@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draft</title>
+</head>
+<body>
+
+{% include "header.html" %}
+{#    Implement drafting logic, only can do if a draft hasn't been done before  #}
+<h1>Welcome to the draft page!</h1>
+
+{% if is_active == 0 %}
+
+    {% block content1 %}
+        <form action="" method="post" novalidate>
+            {{ start.hidden_tag() }}
+            <strong>Press the button to start the draft:</strong>
+            <p>{{ start.submit() }}</p>
+        </form>
+    {% endblock %}
+
+{% endif %}
+
+
+{% if is_active == 1 %}
+<h1>Draft Player</h1>
+
+{% block content2 %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.player_id.label }}
+            {{ form.player_id() }}
+        </p>
+        <p>
+            {{ form.user_id.label }}
+            {{ form.user_id() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
+
+{% endif %}
+
+{#<h2>Reset League</h2>#}
+{#<div>#}
+{#    <strong>WARNING: RESETTING WILL DELETE THE CURRENT LEAGUE!</strong>#}
+{#    <button type="button">Reset</button>#}
+{#</div>#}
+
+</body>
+</html>

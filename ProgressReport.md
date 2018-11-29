@@ -38,3 +38,45 @@ The web interface will likely contain six pages to view: 1) weekly matchups and 
 6.  The final page for users is a designed for trading. At any point during the season, two users can trade players with one another, which is another common feature of fantasy football. A user would be able to select another user to trade with from the drop-down menu, then select which of their player(s) they’re interested in trading for the other user’s player(s). The other player would have to approve this trade (a notification would appear in their trade page), and if approved, the players would be swapped between the two rosters.
 
 ## Schema Design
+
+**Stats Side:**
+Player (__playerID__, team, name)
+
+Game (__gameID__, week)
+
+PlayedIn (__playerID__, __gameID__, goals, catches, assists, completions, blocks, turnovers)
+
+IsOn (__playerID__, __teamID__)
+
+
+**Fantasy Side:**
+
+FantasyTeam (__teamID__, name, wins, losses)
+
+FantasyGame (__fantasygameID__, week) 
+
+FantasyPlayedIn (__teamID__, __fantasygameID__, won?, score)
+
+User (__userID__, username, password)
+
+OwnedBy (__userID__, __teamID__)
+
+## E/R Diagram
+
+![alt text](images/er_diagram.png)
+
+
+## Fantasy Scoring Metrics
+
+Similar to that of Fantasy Football, the fantasy system that we intend to implement will follow a scoring system that allots points to fantasy team owners on a weekly basis based on performances on the field from the selected active roster. The scoring metrics looks at the physically quantifiable dimensions of frisbee that attribute to a team’s success or lack thereof. The scoring metric looks at Assists, Completions, Throwaways, Stalls, Goals, Catches, Drops, Ds, and Callahans. The points earned from each category are weighted based on their relative frequencies and likelihood to occur, taken from the most recent year of statistics because 2018 is most reflective of the current state of the game. The AUDL is young and constantly evolving, implementing rule changes, and adding and shifting rosters. Because it is still a growing sport, it has become more competitive and players who were on rosters 5 years ago may not be on rosters today. At the same time, the AUDL has changed the number of teams, as new franchises are being made, and some being disbanded. The scoring system is as follows:
+Assists: 12
+Goals: 12
+Catches: 0.5
+Completions: 0.5
+Stalls: -14
+Throwaways: -14
+Drops: -14
+Ds: 24
+Callahans: 72
+
+We wanted to balance the distribution of points such that it tries to give weight equally to both offensive and defensive statistics so that drafted teams are not heavily skewed offensively. At the same time, we added negative points for Throwaways, Stalls, and Drops to add another dimension when drafting. This means that players who perform most efficiently rather than at the highest volume are more valuable in the fantasy draft. We want players of all positions to be viable draft picks and not those who are typically centerpiece players such as handlers (the ultimate equivalent of a quarterback). The way score is tallied at the end of the week is as intuitive as it seems. The total number of points accumulated from each of these statistics for each respective active starting player is summed together and that is the team's fantasy score for the week. 
