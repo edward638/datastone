@@ -16,6 +16,9 @@ class DraftForm(FlaskForm):
     user_id = SelectField(u'User', coerce=int)
     submit = SubmitField('Choose')
 
+class StartDraftForm(FlaskForm):
+    submit = SubmitField('Start')
+
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     # email = StringField('Email', validators=[DataRequired(), Email()])

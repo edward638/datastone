@@ -10,14 +10,23 @@
 {#    Implement drafting logic, only can do if a draft hasn't been done before  #}
 <h1>Welcome to the draft page!</h1>
 
-<div>
-    <strong>Press the button to start the draft:</strong>
-    <button type="button">Start Draft!</button>
-</div>
+{% if is_active == 0 %}
 
+    {% block content1 %}
+        <form action="" method="post" novalidate>
+            {{ start.hidden_tag() }}
+            <strong>Press the button to start the draft:</strong>
+            <p>{{ start.submit() }}</p>
+        </form>
+    {% endblock %}
+
+{% endif %}
+
+
+{% if is_active == 1 %}
 <h1>Draft Player</h1>
 
-{% block content %}
+{% block content2 %}
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
@@ -32,13 +41,13 @@
     </form>
 {% endblock %}
 
+{% endif %}
 
-
-<h2>Reset League</h2>
-<div>
-    <strong>WARNING: RESETTING WILL DELETE THE CURRENT LEAGUE!</strong>
-    <button type="button">Reset</button>
-</div>
+{#<h2>Reset League</h2>#}
+{#<div>#}
+{#    <strong>WARNING: RESETTING WILL DELETE THE CURRENT LEAGUE!</strong>#}
+{#    <button type="button">Reset</button>#}
+{#</div>#}
 
 </body>
 </html>
