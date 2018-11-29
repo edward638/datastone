@@ -1,4 +1,5 @@
 from app import app, db
+
 from app.models import PlayerData, User, Settings
 from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm
 from flask import render_template, flash, redirect, url_for

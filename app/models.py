@@ -56,6 +56,19 @@ class PlayerStatus(db.Model):
     def __repr__(self):
         return '<PlayerStatus {}>'.format(self.name)
 
+class PlayerWeeklyStats(db.Model):
+    player_id = db.Column(db.Integer, primary_key=True)
+    week = db.Column(db.Integer, primary_key=True)
+    goals = db.Column(db.Integer)
+    assists = db.Column(db.Integer)
+    blocks = db.Column(db.Integer)
+    catches = db.Column(db.Integer)
+    completions = db.Column(db.Integer)
+    throwaways = db.Column(db.Integer)
+    drops = db.Column(db.Integer)
+    callahans = db.Column(db.Integer)
+    score = db.Column(db.REAL)
+
 class Settings(db.Model):
     active = db.Column(db.Integer, primary_key=True)
 
