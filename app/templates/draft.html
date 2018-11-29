@@ -15,6 +15,25 @@
     <button type="button">Start Draft!</button>
 </div>
 
+<h1>Draft Player</h1>
+
+{% block content %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.player_id.label }}
+            {{ form.player_id() }}
+        </p>
+        <p>
+            {{ form.user_id.label }}
+            {{ form.user_id() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
+
+
+
 <h2>Reset League</h2>
 <div>
     <strong>WARNING: RESETTING WILL DELETE THE CURRENT LEAGUE!</strong>

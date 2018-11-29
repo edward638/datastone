@@ -1,8 +1,15 @@
 from app import app, db
+<<<<<<< HEAD
+from app.models import Player, User
+from flask import render_template, flash, redirect
+from app.forms import LoginForm, DraftForm
+
+=======
 from flask import render_template, flash, redirect, url_for
 from app.forms import LoginForm, RegistrationForm
 from flask_login import current_user, login_user, logout_user
 from app.models import User
+>>>>>>> 65f7a57bb507673ab8caba13f6eb3cecf09be1ff
 
 # app.secret_key = 'datastone bois'
 # app.config['SESSION_TYPE'] = 'filesystem'
@@ -56,9 +63,23 @@ def user_welcome():
 def standings():
     return render_template("standings.html")
 
-@app.route('/draft')
+@app.route('/draft', methods=['GET', 'POST'])
 def draft():
-    return render_template("draft.html")
+    form = DraftForm()
+    players = Player.query.all()
+    users = User.query.all()
+    form.player_id.choices = [(i.id, i.player) for i in players if i.owner == -1]
+    form.user_id.choices = [(j.id, j.team_name) for j in users]
+    print(form.validate_on_submit())
+
+    if form.validate_on_submit():
+        player_update = Player.query.filter_by(id=form.player_id.data).first()
+        player_update.owner = form.user_id.data
+        db.session.commit()
+
+        return redirect('/draft')
+
+    return render_template("draft.html", form=form)
 
 @app.route('/draft/start')
 def draft_start():
