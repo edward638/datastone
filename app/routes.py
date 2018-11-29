@@ -1,15 +1,8 @@
 from app import app, db
-<<<<<<< HEAD
-from app.models import Player, User
-from flask import render_template, flash, redirect
-from app.forms import LoginForm, DraftForm
-
-=======
 from flask import render_template, flash, redirect, url_for
-from app.forms import LoginForm, RegistrationForm
+from app.forms import LoginForm, RegistrationForm, DraftForm
 from flask_login import current_user, login_user, logout_user
-from app.models import User
->>>>>>> 65f7a57bb507673ab8caba13f6eb3cecf09be1ff
+from app.models import User, Player
 
 # app.secret_key = 'datastone bois'
 # app.config['SESSION_TYPE'] = 'filesystem'
