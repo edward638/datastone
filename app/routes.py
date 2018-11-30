@@ -1,6 +1,6 @@
 from app import app, db
 
-from app.models import PlayerData, User, Settings
+from app.models import PlayerStatus, User, Settings
 from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm
 from flask import render_template, flash, redirect, url_for
 from flask_login import current_user, login_user, logout_user
@@ -61,17 +61,20 @@ def standings():
 def draft():
     start = StartDraftForm()
     form = DraftForm()
-    players = PlayerData.query.all()
+    players = PlayerStatus.query.all()
     users = User.query.all()
     settings = Settings.query.all()
     is_active = [x.active for x in settings][0]
     # print(is_active)
     # print(" ^ value of is_active")
-    form.player_id.choices = [(i.id, i.name) for i in players]
+    form.player_id.choices = [(i.player_id, i.name) for i in players if i.user_id == -1]
     form.user_id.choices = [(j.id, j.username) for j in users]
+    # print(start.validate_on_submit())
     # print(form.validate_on_submit())
+    # print("start, form\n")
 
-    if start.validate_on_submit():
+    if start.validate_on_submit() and is_active != 1:
+        print("start validated")
         settings_update = Settings.query.first()
         settings_update.active = 1
         db.session.commit()
@@ -79,13 +82,21 @@ def draft():
         return redirect('/draft')
 
     if form.validate_on_submit():
-        player_update = PlayerData.query.filter_by(id=form.player_id.data).first()
-        player_update.owner = form.user_id.data
+        print("form validated")
+        player_update = PlayerStatus.query.filter_by(player_id=form.player_id.data).first()
+        # print("player_update owner: " + player_update.owner)
+        player_update.user_id = form.user_id.data
         db.session.commit()
-
         return redirect('/draft')
 
-    return render_template("draft.html", start=start, form=form, is_active=is_active)
+    draftees = dict()
+    for x in users:
+        draftees[x.username] = list()
+        for player in PlayerStatus.query.filter_by(user_id=x.id):
+            draftees[x.username].append(player.name)
+
+
+    return render_template("draft.html", start=start, form=form, is_active=is_active, draftees=draftees)
 
 @app.route('/draft/start')
 def draft_start():

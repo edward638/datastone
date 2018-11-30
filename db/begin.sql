@@ -34,6 +34,7 @@ CREATE TABLE PlayerWeeklyStats
  PRIMARY KEY(player_id, week));
 
 -- SQL statement to populate PlayerWeeklyStats with everything but score
+-- RUN this big query, replacing the 1 on line 41 with 2, 3, ..., 16.
 WITH IND(i) AS (SELECT * FROM generate_series(0, (SELECT COUNT(*) FROM player_status) - 1, 1))
 		INSERT INTO player_weekly_stats SELECT
 			i,

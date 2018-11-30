@@ -11,7 +11,7 @@
 <h1>Welcome to the draft page!</h1>
 
 {% if is_active == 0 %}
-
+    <h2>Please have all users present for this action.</h2>
     {% block content1 %}
         <form action="" method="post" novalidate>
             {{ start.hidden_tag() }}
@@ -21,7 +21,6 @@
     {% endblock %}
 
 {% endif %}
-
 
 {% if is_active == 1 %}
 <h1>Draft Player</h1>
@@ -40,6 +39,29 @@
         <p>{{ form.submit() }}</p>
     </form>
 {% endblock %}
+
+
+<h2>Currently Drafted</h2>
+
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            {% for x in range(10) %}
+                <th>Player {{ x + 1 }}</th>
+            {% endfor %}
+        </tr>
+        {% for user in draftees %}
+        <tr>
+            <td><b>{{ user }}</b></td>
+            {%  for player in draftees[user] %}
+                <td>{{ player }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
 
 {% endif %}
 
