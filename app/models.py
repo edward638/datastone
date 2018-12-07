@@ -1,4 +1,5 @@
 from app import db, login
+from sqlalchemy import sql, orm
 from flask_login import UserMixin
 
 # class User(db.Model):
@@ -52,6 +53,29 @@ class PlayerStatus(db.Model):
     score_sd = db.Column(db.REAL)
     user_id = db.Column(db.Integer)
     active = db.Column(db.Integer)
+    @staticmethod
+    def setActive(player_id, active_value):
+        try:
+            db.session.execute('UPDATE player_status SET active = :active_value'
+                               ' WHERE player_id = :player_id',
+                               dict(player_id=player_id, active_value=active_value))
+            db.session.commit()
+
+        except Exception as e:
+            print("update failed")
+            db.session.rollback()
+            raise e
+
+    @staticmethod
+    def reset():
+        try:
+            db.session.execute('UPDATE player_status SET user_id = -1, active = 0')
+            db.session.commit()
+
+        except Exception as e:
+            print("reset failed")
+            db.session.rollback()
+            raise e
 
     def __repr__(self):
         return '<PlayerStatus {}>'.format(self.name)
@@ -69,8 +93,117 @@ class PlayerWeeklyStats(db.Model):
     callahans = db.Column(db.Integer)
     score = db.Column(db.REAL)
 
+    @staticmethod
+    def populate(week):
+        try:
+            # print("hi")
+            db.session.execute('WITH IND(i) AS (SELECT * FROM generate_series(0, (SELECT COUNT(*) FROM player_status) - 1, 1))'
+		'INSERT INTO player_weekly_stats SELECT '
+			'i,'
+			 ':week,'
+			 '(SELECT (ROUND(goals_avg+goals_sd*(SQRT(-2*LN(RANDOM()))*COS(2*PI()*RANDOM())))) FROM player_data WHERE id = i),'
+			 '(SELECT (ROUND(assists_avg+assists_sd*(SQRT(-2*LN(RANDOM()))*COS(2*PI()*RANDOM())))) FROM player_data WHERE id = i),'
+			 '(SELECT (ROUND(blocks_avg+blocks_sd*(SQRT(-2*LN(RANDOM()))*COS(2*PI()*RANDOM())))) FROM player_data WHERE id = i),'
+			 '(SELECT (ROUND(catches_avg+catches_sd*(SQRT(-2*LN(RANDOM()))*COS(2*PI()*RANDOM())))) FROM player_data WHERE id = i),'
+			 '(SELECT (ROUND(completions_avg+completions_sd*(SQRT(-2*LN(RANDOM()))*COS(2*PI()*RANDOM())))) FROM player_data WHERE id = i),'
+			 '(SELECT (ROUND(throwaways_avg+throwaways_sd*(SQRT(-2*LN(RANDOM()))*COS(2*PI()*RANDOM())))) FROM player_data WHERE id = i),'
+			 '(SELECT (ROUND(drops_avg+drops_sd*(SQRT(-2*LN(RANDOM()))*COS(2*PI()*RANDOM())))) FROM player_data WHERE id = i),'
+			 '(SELECT (ROUND(callahans_avg+callahans_sd*(SQRT(-2*LN(RANDOM()))*COS(2*PI()*RANDOM())))) FROM player_data WHERE id = i),'
+			 '0'
+' FROM IND', dict(week=week))
+            db.session.commit()
+
+        except Exception as e:
+            print("populate failed")
+            db.session.rollback()
+            raise e
+
+    @staticmethod
+    def remove_negatives():
+        try:
+            db.session.execute('UPDATE player_weekly_stats SET goals = 0 WHERE goals < 0')
+
+            UPDATE
+            player_weekly_stats
+            SET
+            assists = 0
+            WHERE
+            assists < 0;
+
+            UPDATE
+            player_weekly_stats
+            SET
+            blocks = 0
+            WHERE
+            blocks < 0;
+
+            UPDATE
+            player_weekly_stats
+            SET
+            catches = 0
+            WHERE
+            catches < 0;
+
+            UPDATE
+            player_weekly_stats
+            SET
+            completions = 0
+            WHERE
+            completions < 0;
+
+            UPDATE
+            player_weekly_stats
+            SET
+            drops = 0
+            WHERE
+            drops < 0;
+
+            UPDATE
+            player_weekly_stats
+            SET
+            throwaways = 0
+            WHERE
+            throwaways < 0;
+
+            UPDATE
+            player_weekly_stats
+            SET
+            callahans = 0
+            WHERE
+            callahans < 0;
+
+
+            db.session.commit()
+
+        except Exception as e:
+            print("remove negatives failed")
+            db.session.rollback()
+            raise e
+
+    @staticmethod
+    def reset():
+        try:
+            db.session.execute('DELETE FROM player_weekly_stats')
+            db.session.commit()
+
+        except Exception as e:
+            print("reset failed")
+            db.session.rollback()
+            raise e
+
 class Settings(db.Model):
     active = db.Column(db.Integer, primary_key=True)
+
+    @staticmethod
+    def reset():
+        try:
+            db.session.execute('UPDATE settings SET active = 0')
+            db.session.commit()
+
+        except Exception as e:
+            print("reset failed")
+            db.session.rollback()
+            raise e
 
     def __repr__(self):
         return '<Settings {}>'.format(self.week_number)
@@ -80,3 +213,5 @@ class Week(db.Model):
 
     def __repr__(self):
         return '<Week {}>'.format(self.week_number)
+
+

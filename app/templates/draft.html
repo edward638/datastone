@@ -60,16 +60,27 @@
         {% endfor %}
     </table>
 
+    <hr>
 
+    <h2>Reset League</h2>
+    <div>
+        <strong>WARNING: THIS WILL RESET THE CURRENT LEAGUE!</strong>
+        {% block content3 %}
+        <form action="" method="post" novalidate>
+            {{ start.hidden_tag() }}
+            <p>{{ reset.submit() }}</p>
+        </form>
+        {% endblock %}
+    </div>
+    <div>
+        <strong>WARNING: THIS WILL RESET THE CURRENT LEAGUE AND USERS!</strong>
+        <button type="button">Reset Season and Users</button>
+    </div>
 
 
 {% endif %}
 
-{#<h2>Reset League</h2>#}
-{#<div>#}
-{#    <strong>WARNING: RESETTING WILL DELETE THE CURRENT LEAGUE!</strong>#}
-{#    <button type="button">Reset</button>#}
-{#</div>#}
+
 
 </body>
 </html>

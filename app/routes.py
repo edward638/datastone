@@ -1,8 +1,8 @@
 from app import app, db
 
-from app.models import PlayerStatus, User, Settings
-from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm
-from flask import render_template, flash, redirect, url_for
+from app.models import PlayerStatus, User, Settings, PlayerWeeklyStats
+from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm, ResetForm
+from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
 
 # app.secret_key = 'datastone bois'
@@ -49,9 +49,30 @@ def register():
         return redirect('/login')
     return render_template('register.html', title='Register', form=form)
 
-@app.route('/profile')
+@app.route('/profile', methods=['GET','POST'])
 def user_welcome():
-    return render_template("user.html")
+    if current_user.is_authenticated:
+        error = ""
+        players = PlayerStatus.query.all()
+        player_list = [[i.player_id, i.name, i.active] for i in players if i.user_id == current_user.id]
+
+        if request.method == 'POST':
+            values = request.form.getlist("active")
+            if len(values) > 7:
+                error = "You can only select up to 7 players."
+                return render_template("user.html", player_list=player_list, error=error)
+            for player in player_list:
+                PlayerStatus.setActive(int(player[0]), 0)
+            for i in values:
+                PlayerStatus.setActive(int(i), 1)
+
+            players = PlayerStatus.query.all()
+            player_list = [[i.player_id, i.name, i.active] for i in players if i.user_id == current_user.id]
+
+        return render_template("user.html", player_list=player_list, error=error)
+    else:
+        return render_template("user_default.html")
+
 
 @app.route('/standings')
 def standings():
@@ -61,6 +82,7 @@ def standings():
 def draft():
     start = StartDraftForm()
     form = DraftForm()
+    reset = ResetForm()
     players = PlayerStatus.query.all()
     users = User.query.all()
     settings = Settings.query.all()
@@ -73,11 +95,20 @@ def draft():
     # print(form.validate_on_submit())
     # print("start, form\n")
 
+
+    if reset.validate_on_submit() and is_active == 1:
+        PlayerStatus.reset()
+        Settings.reset()
+        PlayerWeeklyStats.reset()
+        return redirect('/draft')
+
     if start.validate_on_submit() and is_active != 1:
         print("start validated")
         settings_update = Settings.query.first()
         settings_update.active = 1
         db.session.commit()
+        for i in range(1, 17):
+            PlayerWeeklyStats.populate(i)
 
         return redirect('/draft')
 
@@ -95,8 +126,7 @@ def draft():
         for player in PlayerStatus.query.filter_by(user_id=x.id):
             draftees[x.username].append(player.name)
 
-
-    return render_template("draft.html", start=start, form=form, is_active=is_active, draftees=draftees)
+    return render_template("draft.html", start=start, form=form, is_active=is_active, draftees=draftees, reset=reset)
 
 @app.route('/draft/start')
 def draft_start():
