@@ -129,7 +129,16 @@ class PlayerWeeklyStats(db.Model):
             db.session.execute('UPDATE player_weekly_stats SET drops = 0 WHERE drops < 0')
             db.session.execute('UPDATE player_weekly_stats SET throwaways = 0 WHERE throwaways < 0')
             db.session.execute('UPDATE player_weekly_stats SET callahans = 0 WHERE callahans < 0')
-            dbsession.commit()
+
+            db.session.execute('UPDATE player_weekly_stats as t set score = (12*t.goals+12*t.assists+24*t.blocks+0.5*t.catches+0.5*t.completions-14*t.throwaways-14*t.drops+72*t.callahans)'
+            ' from player_weekly_stats as c'
+            ' where c.player_id = t.player_id')
+
+
+
+            db.session.commit()
+
+
 
         except Exception as e:
             print("remove negatives failed")

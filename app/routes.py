@@ -106,9 +106,10 @@ def draft():
         print("start validated")
         settings_update = Settings.query.first()
         settings_update.active = 1
-        db.session.commit()
         for i in range(1, 17):
             PlayerWeeklyStats.populate(i)
+        PlayerWeeklyStats.remove_negatives()
+        db.session.commit()
 
         return redirect('/draft')
 
