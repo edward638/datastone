@@ -110,7 +110,7 @@ class PlayerWeeklyStats(db.Model):
 			 '(SELECT (ROUND(drops_avg+drops_sd*(SQRT(-2*LN(RANDOM()))*COS(2*PI()*RANDOM())))) FROM player_data WHERE id = i),'
 			 '(SELECT (ROUND(callahans_avg+callahans_sd*(SQRT(-2*LN(RANDOM()))*COS(2*PI()*RANDOM())))) FROM player_data WHERE id = i),'
 			 '0'
-' FROM IND', dict(week=week))
+             ' FROM IND', dict(week=week))
             db.session.commit()
 
         except Exception as e:
@@ -122,58 +122,14 @@ class PlayerWeeklyStats(db.Model):
     def remove_negatives():
         try:
             db.session.execute('UPDATE player_weekly_stats SET goals = 0 WHERE goals < 0')
-
-            UPDATE
-            player_weekly_stats
-            SET
-            assists = 0
-            WHERE
-            assists < 0;
-
-            UPDATE
-            player_weekly_stats
-            SET
-            blocks = 0
-            WHERE
-            blocks < 0;
-
-            UPDATE
-            player_weekly_stats
-            SET
-            catches = 0
-            WHERE
-            catches < 0;
-
-            UPDATE
-            player_weekly_stats
-            SET
-            completions = 0
-            WHERE
-            completions < 0;
-
-            UPDATE
-            player_weekly_stats
-            SET
-            drops = 0
-            WHERE
-            drops < 0;
-
-            UPDATE
-            player_weekly_stats
-            SET
-            throwaways = 0
-            WHERE
-            throwaways < 0;
-
-            UPDATE
-            player_weekly_stats
-            SET
-            callahans = 0
-            WHERE
-            callahans < 0;
-
-
-            db.session.commit()
+            db.session.execute('UPDATE player_weekly_stats SET assists = 0 WHERE assists < 0')
+            db.session.execute('UPDATE player_weekly_stats SET blocks = 0 WHERE blocks < 0')
+            db.session.execute('UPDATE player_weekly_stats SET catches = 0 WHERE catches < 0')
+            db.session.execute('UPDATE player_weekly_stats SET completions = 0 WHERE completions < 0')
+            db.session.execute('UPDATE player_weekly_stats SET drops = 0 WHERE drops < 0')
+            db.session.execute('UPDATE player_weekly_stats SET throwaways = 0 WHERE throwaways < 0')
+            db.session.execute('UPDATE player_weekly_stats SET callahans = 0 WHERE callahans < 0')
+            dbsession.commit()
 
         except Exception as e:
             print("remove negatives failed")
