@@ -1,7 +1,7 @@
 from app import app, db
 
 from app.models import PlayerStatus, User, Settings, PlayerWeeklyStats
-from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm, ResetForm
+from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm, ResetForm, ResetAllForm
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
 
@@ -83,6 +83,7 @@ def draft():
     start = StartDraftForm()
     form = DraftForm()
     reset = ResetForm()
+    reset_all = ResetAllForm()
     players = PlayerStatus.query.all()
     users = User.query.all()
     settings = Settings.query.all()
@@ -95,25 +96,19 @@ def draft():
     # print(form.validate_on_submit())
     # print("start, form\n")
 
-
-    if reset.validate_on_submit() and is_active == 1:
-        PlayerStatus.reset()
-        Settings.reset()
-        PlayerWeeklyStats.reset()
-        return redirect('/draft')
-
-    if start.validate_on_submit() and is_active != 1:
+    if start.submit.data and start.validate_on_submit() and is_active != 1:
         print("start validated")
         settings_update = Settings.query.first()
         settings_update.active = 1
+        db.session.commit()
+
         for i in range(1, 17):
             PlayerWeeklyStats.populate(i)
         PlayerWeeklyStats.remove_negatives()
-        db.session.commit()
 
         return redirect('/draft')
 
-    if form.validate_on_submit():
+    if form.validate_on_submit() and form.submit.data:
         print("form validated")
         player_update = PlayerStatus.query.filter_by(player_id=form.player_id.data).first()
         # print("player_update owner: " + player_update.owner)
@@ -127,7 +122,33 @@ def draft():
         for player in PlayerStatus.query.filter_by(user_id=x.id):
             draftees[x.username].append(player.name)
 
-    return render_template("draft.html", start=start, form=form, is_active=is_active, draftees=draftees, reset=reset)
+    return render_template("draft.html", start=start, form=form, is_active=is_active, draftees=draftees, reset=reset, reset_all=reset_all)
+
+
+@app.route('/reset', methods=['GET', 'POST'])
+def reset_draft():
+    settings = Settings.query.all()
+    is_active = [x.active for x in settings][0]
+    reset = ResetForm()
+    if reset.submit.data and reset.validate_on_submit() and is_active == 1:
+        print("reset validated")
+        PlayerStatus.reset()
+        Settings.reset()
+        PlayerWeeklyStats.reset()
+    return redirect('/draft')
+
+@app.route('/resetall', methods=['GET', 'POST'])
+def reset_all():
+    settings = Settings.query.all()
+    is_active = [x.active for x in settings][0]
+    reset_all = ResetAllForm()
+    if reset_all.submit.data and reset_all.validate_on_submit() and is_active == 1:
+        print("resetall validated")
+        PlayerStatus.reset()
+        Settings.reset()
+        PlayerWeeklyStats.reset()
+        User.reset()
+    return redirect('/draft')
 
 @app.route('/draft/start')
 def draft_start():

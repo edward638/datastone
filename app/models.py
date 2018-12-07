@@ -16,6 +16,18 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), index=True)
     cum_score = db.Column(db.Integer)
 
+    @staticmethod
+    def reset():
+        try:
+            db.session.execute('DELETE FROM "user"')
+            db.session.commit()
+
+        except Exception as e:
+            print("reset failed")
+            db.session.rollback()
+            raise e
+
+
     def __repr__(self):
         return '<User {}>'.format(self.team_name)
 

@@ -39,3 +39,6 @@ class RegistrationForm(FlaskForm):
 
 class ResetForm(FlaskForm):
     submit = SubmitField('Reset Season')
+
+class ResetAllForm(FlaskForm):
+    submit = SubmitField('Reset Season and Users')

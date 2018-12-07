@@ -66,15 +66,22 @@
     <div>
         <strong>WARNING: THIS WILL RESET THE CURRENT LEAGUE!</strong>
         {% block content3 %}
-        <form action="" method="post" novalidate>
-            {{ start.hidden_tag() }}
+        <form action="{{ url_for('reset_draft') }}" method="post" novalidate>
+            {{ reset.hidden_tag() }}
             <p>{{ reset.submit() }}</p>
         </form>
         {% endblock %}
     </div>
     <div>
+
         <strong>WARNING: THIS WILL RESET THE CURRENT LEAGUE AND USERS!</strong>
-        <button type="button">Reset Season and Users</button>
+        {% block content4 %}
+        <form action="{{ url_for('reset_all') }}" method="post" novalidate>
+            {{ reset_all.hidden_tag() }}
+            <p>{{ reset_all.submit() }}</p>
+        </form>
+        {% endblock %}
+
     </div>
 
 
