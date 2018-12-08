@@ -8,6 +8,22 @@
 
 {% include "header.html" %}
 
+
+<h2>Choose Week</h2>
+
+{% block content %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.choose_week.label }}
+            {{ form.choose_week() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
+
+
+
 <h2>Week {{ week }}, Team Scores</h2>
     <table border="1">
 

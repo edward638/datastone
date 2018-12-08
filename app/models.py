@@ -14,7 +14,6 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     team_name = db.Column(db.String(64), index=True)
     username = db.Column(db.String(64), index=True)
-    cum_score = db.Column(db.Integer)
 
     # @staticmethod
     # def reset():
@@ -167,9 +166,9 @@ class PlayerWeeklyStats(db.Model):
     @staticmethod
     def show_player_stats(week):
         try:
-            return db.session.execute('SELECT name, username, goals, assists, blocks, catches, completions, throwaways, drops, callahans, score '
-                               'FROM player_weekly_stats NATURAL JOIN(SELECT * FROM player_status, "user" WHERE "user".id = player_status.user_id) '
-                               'as a WHERE week = :week AND active = 1 ORDER BY score DESC', dict(week=week))
+           return db.session.execute('SELECT name, username, goals, assists, blocks, catches, completions, throwaways, drops, callahans, score '
+                                     'FROM player_active NATURAL JOIN player_weekly_stats NATURAL JOIN(SELECT * FROM player_status, "user" WHERE "user".id = player_status.user_id) as a '
+                                     'WHERE week = :week ORDER BY score DESC', dict(week=week))
 
         except Exception as e:
             print("show player stats failed")
@@ -179,9 +178,9 @@ class PlayerWeeklyStats(db.Model):
     @staticmethod
     def show_team_stats(week):
         try:
-            return db.session.execute('SELECT username, SUM(score) FROM player_weekly_stats '
+            return db.session.execute('SELECT username, SUM(score) FROM player_active NATURAL JOIN player_weekly_stats '
                                       'NATURAL JOIN (SELECT * FROM player_status, "user" WHERE "user".id = player_status.user_id) as a '
-                                      'WHERE week = :week AND active = 1 GROUP BY a.username ORDER BY SUM(score) DESC', dict(week=week))
+                                      'WHERE week = :week GROUP BY username ORDER BY SUM(score) DESC', dict(week=week))
 
         except Exception as e:
             print("show team stats failed")
@@ -246,4 +245,47 @@ class Week(db.Model):
     def __repr__(self):
         return '<Week {}>'.format(self.week_number)
 
+class PlayerActive(db.Model):
+    player_id = db.Column(db.Integer, primary_key=True)
+    week = db.Column(db.Integer, primary_key=True)
+
+    @staticmethod
+    def iterate(week):
+        try:
+            db.session.execute('INSERT INTO player_active (SELECT player_id, :week FROM player_status WHERE active = 1)', dict(week=week))
+            db.session.commit()
+
+        except Exception as e:
+            print("player active iterate failed")
+            db.session.rollback()
+            raise e
+
+    @staticmethod
+    def get_standings(week):
+        try:
+            return db.session.execute(
+                'SELECT username, SUM(score) FROM player_active NATURAL JOIN player_weekly_stats '
+                'NATURAL JOIN (SELECT * FROM player_status, "user" WHERE "user".id = player_status.user_id) as a '
+                'WHERE week <= :week GROUP BY username ORDER BY SUM(score) DESC', dict(week=week))
+
+        except Exception as e:
+            print("player active iterate failed")
+            db.session.rollback()
+            raise e
+
+    def __repr__(self):
+        return '<PlayerActive {}>'.format(self.player_id)
+
+
+
+
+
+
+class TeamScores(db.Model):
+    user_id = db.Column(db.String(64), primary_key=True)
+    week = db.Column(db.Integer, primary_key=True)
+    score = db.Column(db.REAL)
+
+    def __repr__(self):
+        return '<TeamScores {}>'.format(self.user_id)
 

@@ -46,10 +46,7 @@ class ResetAllForm(FlaskForm):
 class IterateWeekForm(FlaskForm):
     submit = SubmitField('Next')
 
-# class DraftForm(FlaskForm):
-#     # player_id = SelectField(u'Player', validators=[DataRequired()], coerce=int)
-#     # user_id = SelectField(u'User', validators=[DataRequired()], coerce=int)
-#     player_id = SelectField(u'Player', coerce=int)
-#     user_id = SelectField(u'User', coerce=int)
-#     submit = SubmitField('Choose')
+class ChooseWeekForm(FlaskForm):
+    choose_week = SelectField(u'Choose Week', coerce=int)
+    submit = SubmitField('Go')
 

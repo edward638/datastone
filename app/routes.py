@@ -1,7 +1,7 @@
 from app import app, db
 
-from app.models import PlayerStatus, User, Settings, PlayerWeeklyStats, Week
-from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm, ResetForm, ResetAllForm, IterateWeekForm
+from app.models import PlayerStatus, User, Settings, PlayerWeeklyStats, Week, PlayerActive
+from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm, ResetForm, ResetAllForm, IterateWeekForm, ChooseWeekForm
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
 
@@ -83,15 +83,35 @@ def user_welcome():
 
 @app.route('/standings')
 def standings():
-    users = User.query.all()
-    standings = [(i.team_name, i.username, i.cum_score) for i in users]
-    sorted(standings, key=lambda x: x[2])
-    return render_template("standings.html", standings=standings)
+    week1 = Week.query.all()
+    week_number = [x.week_number for x in week1][0]
+    results = PlayerActive.get_standings(week_number)
+    rows = []
+    for x in results:
+        row = []
+        for i in x:
+            # print(i)
+            row.append(i)
+        rows.append(row)
+    return render_template("standings.html", standings=rows, week=week_number)
 
+@app.route('/week')
+def week():
+    return redirect('/week/1')
 
-@app.route('/week/<week>')
+@app.route('/week/<week>', methods=['GET','POST'])
 def show_week(week):
     results = PlayerWeeklyStats.show_player_stats(week)
+    form = ChooseWeekForm()
+    week1 = Week.query.all()
+    week_number = [x.week_number for x in week1][0]
+    form.choose_week.choices = [(i, i) for i in range(1, week_number+1)]
+
+    if form.submit.data and form.validate_on_submit():
+        redirect1 = '/week/' + str(form.choose_week.data)
+        # print(redirect)
+        return redirect(redirect1)
+
     rows = []
     for x in results:
         row = []
@@ -108,7 +128,7 @@ def show_week(week):
             team_row.append(i)
         team_rows.append(team_row)
 
-    return render_template("week.html", rows=rows, team_rows=team_rows, week=week)
+    return render_template("week.html", rows=rows, team_rows=team_rows, week=week, form=form)
 
 @app.route('/draft', methods=['GET', 'POST'])
 def draft():
@@ -184,6 +204,9 @@ def iterate_week():
     iterate = IterateWeekForm()
     if iterate.submit.data and iterate.validate_on_submit():
         Week.iterate()
+        week = Week.query.all()
+        week_number = [x.week_number for x in week][0]
+        PlayerActive.iterate(week_number)
         print("iterated")
 
     return redirect('/index')

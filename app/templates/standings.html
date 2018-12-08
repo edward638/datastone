@@ -8,7 +8,13 @@
 
 {% include "header.html" %}
 
-<h2>Current Standings</h2>
+
+{% if week == 16 %}
+    <h2>Final Standings</h2>
+    {% else %}
+    <h2>Current Standings</h2>
+{% endif %}
+
 
     <table border="1">
 
@@ -20,8 +26,9 @@
         {% for x in standings %}
 
         <tr>
-            <td><b>{{ x[1] }}</b></td>
-            <td>{{ x[2] }}</td>
+            {% for i in x %}
+                <td>{{ i }}</td>
+            {% endfor %}
         </tr>
 
         {% endfor %}
