@@ -8,28 +8,24 @@
 
 {% include "header.html" %}
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Wins</th>
-        <th>Losses</th>
-    </tr>
-    <tr>
-        <td>Eddie</td>
-        <td>2</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>Jeffrey</td>
-        <td>1</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Remy</td>
-        <td>0</td>
-        <td>2</td>
-    </tr>
-</table>
+<h2>Current Standings</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>Username</th>
+            <th>Overall Score</th>
+        </tr>
+
+        {% for x in standings %}
+
+        <tr>
+            <td><b>{{ x[1] }}</b></td>
+            <td>{{ x[2] }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
 
 </body>
 </html>

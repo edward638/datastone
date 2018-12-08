@@ -23,5 +23,50 @@
         {% block content %}{% endblock %}
 {# only allow creation of account if a draft has not started #}
 
+
+{% if is_active == 1 %}
+
+    <h1>Currently, it is week: {{ week_number }}</h1>
+    {% if week_number < 16 %}
+        <h2>Iterate to Next Week</h2>
+        {% block content2 %}
+            <form action="{{ url_for('iterate_week') }}" method="post" novalidate>
+                {{ iterate.hidden_tag() }}
+                <p>{{ iterate.submit() }}</p>
+            </form>
+        {% endblock %}
+
+        <hr>
+    {% endif %}
+
+    {% if week_number >= 16 %}
+        <h1>Season ended! Thanks for playing!</h1>
+    {% endif %}
+
+    <h2>Reset League</h2>
+    <div>
+        <strong>WARNING: THIS WILL RESET THE CURRENT LEAGUE!</strong>
+        {% block content3 %}
+        <form action="{{ url_for('reset_draft') }}" method="post" novalidate>
+            {{ reset.hidden_tag() }}
+            <p>{{ reset.submit() }}</p>
+        </form>
+        {% endblock %}
+    </div>
+    <div>
+
+        <strong>WARNING: THIS WILL RESET THE CURRENT LEAGUE AND USERS!</strong>
+        {% block content4 %}
+        <form action="{{ url_for('reset_all') }}" method="post" novalidate>
+            {{ reset_all.hidden_tag() }}
+            <p>{{ reset_all.submit() }}</p>
+        </form>
+        {% endblock %}
+
+    </div>
+
+{% endif %}
+
+
 </body>
 </html>

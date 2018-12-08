@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Standings</title>
+</head>
+<body>
+
+{% include "header.html" %}
+
+<h2>Week {{ week }}, Team Scores</h2>
+    <table border="1">
+
+        <tr>
+            <th>Username</th>
+            <th>Score</th>
+        </tr>
+
+        {% for x in team_rows %}
+            <tr>
+            {% for i in x %}
+                <td>{{ i }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+
+    </table>
+
+
+<h2>Week {{ week }}, Player Scores</h2>
+    <table border="1">
+
+        <tr>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Goals</th>
+            <th>Assists</th>
+            <th>Blocks</th>
+            <th>Catches</th>
+            <th>Completions</th>
+            <th>Throwaways</th>
+            <th>Drops</th>
+            <th>Callahans</th>
+            <th>Score</th>
+        </tr>
+
+        {% for x in rows %}
+            <tr>
+            {% for i in x %}
+                <td>{{ i }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

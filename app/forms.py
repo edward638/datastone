@@ -42,3 +42,14 @@ class ResetForm(FlaskForm):
 
 class ResetAllForm(FlaskForm):
     submit = SubmitField('Reset Season and Users')
+
+class IterateWeekForm(FlaskForm):
+    submit = SubmitField('Next')
+
+# class DraftForm(FlaskForm):
+#     # player_id = SelectField(u'Player', validators=[DataRequired()], coerce=int)
+#     # user_id = SelectField(u'User', validators=[DataRequired()], coerce=int)
+#     player_id = SelectField(u'Player', coerce=int)
+#     user_id = SelectField(u'User', coerce=int)
+#     submit = SubmitField('Choose')
+

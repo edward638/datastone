@@ -16,14 +16,25 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), index=True)
     cum_score = db.Column(db.Integer)
 
+    # @staticmethod
+    # def reset():
+    #     try:
+    #         db.session.execute('UPDATE user SET cum_score = 0')
+    #         db.session.commit()
+    #
+    #     except Exception as e:
+    #         print("reset failed")
+    #         db.session.rollback()
+    #         raise e
+
     @staticmethod
-    def reset():
+    def delete_users():
         try:
             db.session.execute('DELETE FROM "user"')
             db.session.commit()
 
         except Exception as e:
-            print("reset failed")
+            print("delete_users failed")
             db.session.rollback()
             raise e
 
@@ -146,16 +157,37 @@ class PlayerWeeklyStats(db.Model):
             ' from player_weekly_stats as c'
             ' where c.player_id = t.player_id')
 
-
-
             db.session.commit()
-
-
 
         except Exception as e:
             print("remove negatives failed")
             db.session.rollback()
             raise e
+
+    @staticmethod
+    def show_player_stats(week):
+        try:
+            return db.session.execute('SELECT name, username, goals, assists, blocks, catches, completions, throwaways, drops, callahans, score '
+                               'FROM player_weekly_stats NATURAL JOIN(SELECT * FROM player_status, "user" WHERE "user".id = player_status.user_id) '
+                               'as a WHERE week = :week AND active = 1 ORDER BY score DESC', dict(week=week))
+
+        except Exception as e:
+            print("show player stats failed")
+            db.session.rollback()
+            raise e
+
+    @staticmethod
+    def show_team_stats(week):
+        try:
+            return db.session.execute('SELECT username, SUM(score) FROM player_weekly_stats '
+                                      'NATURAL JOIN (SELECT * FROM player_status, "user" WHERE "user".id = player_status.user_id) as a '
+                                      'WHERE week = :week AND active = 1 GROUP BY a.username ORDER BY SUM(score) DESC', dict(week=week))
+
+        except Exception as e:
+            print("show team stats failed")
+            db.session.rollback()
+            raise e
+
 
     @staticmethod
     def reset():
@@ -175,6 +207,7 @@ class Settings(db.Model):
     def reset():
         try:
             db.session.execute('UPDATE settings SET active = 0')
+            db.session.execute('UPDATE "user" SET cum_score = 0')
             db.session.commit()
 
         except Exception as e:
@@ -187,6 +220,28 @@ class Settings(db.Model):
 
 class Week(db.Model):
     week_number = db.Column(db.Integer, primary_key=True)
+
+    @staticmethod
+    def reset():
+        try:
+            db.session.execute('UPDATE week SET week_number = 0')
+            db.session.commit()
+
+        except Exception as e:
+            print("week reset failed")
+            db.session.rollback()
+            raise e
+
+    @staticmethod
+    def iterate():
+        try:
+            db.session.execute('UPDATE week SET week_number = (SELECT AVG(week_number)+1 FROM week)')
+            db.session.commit()
+
+        except Exception as e:
+            print("week iterate failed")
+            db.session.rollback()
+            raise e
 
     def __repr__(self):
         return '<Week {}>'.format(self.week_number)

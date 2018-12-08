@@ -1,7 +1,7 @@
 from app import app, db
 
-from app.models import PlayerStatus, User, Settings, PlayerWeeklyStats
-from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm, ResetForm, ResetAllForm
+from app.models import PlayerStatus, User, Settings, PlayerWeeklyStats, Week
+from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm, ResetForm, ResetAllForm, IterateWeekForm
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
 
@@ -12,7 +12,14 @@ from flask_login import current_user, login_user, logout_user
 @app.route('/index')
 def base():
     # return "sup bois"
-    return render_template("index.html")
+    reset = ResetForm()
+    reset_all = ResetAllForm()
+    iterate = IterateWeekForm()
+    settings = Settings.query.all()
+    is_active = [x.active for x in settings][0]
+    week = Week.query.all()
+    week_number = [x.week_number for x in week][0]
+    return render_template("index.html", reset=reset, reset_all=reset_all, is_active=is_active, iterate=iterate, week_number=week_number)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -76,25 +83,43 @@ def user_welcome():
 
 @app.route('/standings')
 def standings():
-    return render_template("standings.html")
+    users = User.query.all()
+    standings = [(i.team_name, i.username, i.cum_score) for i in users]
+    sorted(standings, key=lambda x: x[2])
+    return render_template("standings.html", standings=standings)
+
+
+@app.route('/week/<week>')
+def show_week(week):
+    results = PlayerWeeklyStats.show_player_stats(week)
+    rows = []
+    for x in results:
+        row = []
+        for i in x:
+            # print(i)
+            row.append(i)
+        rows.append(row)
+    team_results = PlayerWeeklyStats.show_team_stats(week)
+    team_rows = []
+    for x in team_results:
+        team_row = []
+        for i in x:
+            # print(i)
+            team_row.append(i)
+        team_rows.append(team_row)
+
+    return render_template("week.html", rows=rows, team_rows=team_rows, week=week)
 
 @app.route('/draft', methods=['GET', 'POST'])
 def draft():
     start = StartDraftForm()
     form = DraftForm()
-    reset = ResetForm()
-    reset_all = ResetAllForm()
     players = PlayerStatus.query.all()
     users = User.query.all()
     settings = Settings.query.all()
     is_active = [x.active for x in settings][0]
-    # print(is_active)
-    # print(" ^ value of is_active")
     form.player_id.choices = [(i.player_id, i.name) for i in players if i.user_id == -1]
     form.user_id.choices = [(j.id, j.username) for j in users]
-    # print(start.validate_on_submit())
-    # print(form.validate_on_submit())
-    # print("start, form\n")
 
     if start.submit.data and start.validate_on_submit() and is_active != 1:
         print("start validated")
@@ -111,18 +136,20 @@ def draft():
     if form.validate_on_submit() and form.submit.data:
         print("form validated")
         player_update = PlayerStatus.query.filter_by(player_id=form.player_id.data).first()
-        # print("player_update owner: " + player_update.owner)
         player_update.user_id = form.user_id.data
         db.session.commit()
         return redirect('/draft')
 
     draftees = dict()
+    max = 0
     for x in users:
         draftees[x.username] = list()
         for player in PlayerStatus.query.filter_by(user_id=x.id):
             draftees[x.username].append(player.name)
+        if len(draftees[x.username]) > max:
+            max = len(draftees[x.username])
 
-    return render_template("draft.html", start=start, form=form, is_active=is_active, draftees=draftees, reset=reset, reset_all=reset_all)
+    return render_template("draft.html", start=start, form=form, is_active=is_active, draftees=draftees, max=max)
 
 
 @app.route('/reset', methods=['GET', 'POST'])
@@ -135,7 +162,8 @@ def reset_draft():
         PlayerStatus.reset()
         Settings.reset()
         PlayerWeeklyStats.reset()
-    return redirect('/draft')
+        Week.reset()
+    return redirect('/index')
 
 @app.route('/resetall', methods=['GET', 'POST'])
 def reset_all():
@@ -147,8 +175,18 @@ def reset_all():
         PlayerStatus.reset()
         Settings.reset()
         PlayerWeeklyStats.reset()
-        User.reset()
-    return redirect('/draft')
+        User.delete_users()
+        Week.reset()
+    return redirect('/index')
+
+@app.route('/iterate', methods=['GET', 'POST'])
+def iterate_week():
+    iterate = IterateWeekForm()
+    if iterate.submit.data and iterate.validate_on_submit():
+        Week.iterate()
+        print("iterated")
+
+    return redirect('/index')
 
 @app.route('/draft/start')
 def draft_start():
