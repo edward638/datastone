@@ -50,3 +50,7 @@ class ChooseWeekForm(FlaskForm):
     choose_week = SelectField(u'Choose Week', coerce=int)
     submit = SubmitField('Go')
 
+class ChooseTeamForm(FlaskForm):
+    choose_team = SelectField(u'Select User', coerce=int)
+    submit = SubmitField('Go')
+

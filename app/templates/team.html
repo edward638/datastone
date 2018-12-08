@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Standings</title>
+</head>
+<body>
+
+{% include "header.html" %}
+
+<h2>Choose Team</h2>
+
+{% block content %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.choose_team.label }}
+            {{ form.choose_team() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
+
+
+<hr>
+
+{% if show == 1 %}
+
+<h1>{{ user }}</h1>
+
+<h2>Active Roster</h2>
+    <table border="1">
+
+        <tr>
+            <th>Player Name</th>
+            <th>Average Score</th>
+            <th>Score Standard Deviation</th>
+        </tr>
+
+        {% for x in active %}
+            <tr>
+            {% for i in x %}
+                <td>{{ i }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    <h2>Bench Roster</h2>
+    <table border="1">
+
+        <tr>
+            <th>Player Name</th>
+            <th>Average Score</th>
+            <th>Score Standard Deviation</th>
+        </tr>
+
+        {% for x in bench %}
+            <tr>
+            {% for i in x %}
+                <td>{{ i }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+
+    </table>
+
+{% endif %}
+{##}
+{#<h2>Week {{ week }}, Player Scores</h2>#}
+{#    <table border="1">#}
+{##}
+{#        <tr>#}
+{#            <th>Name</th>#}
+{#            <th>Owner</th>#}
+{#            <th>Goals</th>#}
+{#            <th>Assists</th>#}
+{#            <th>Blocks</th>#}
+{#            <th>Catches</th>#}
+{#            <th>Completions</th>#}
+{#            <th>Throwaways</th>#}
+{#            <th>Drops</th>#}
+{#            <th>Callahans</th>#}
+{#            <th>Score</th>#}
+{#        </tr>#}
+{##}
+{#        {% for x in rows %}#}
+{#            <tr>#}
+{#            {% for i in x %}#}
+{#                <td>{{ i }}</td>#}
+{#            {% endfor %}#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{##}
+{#    </table>#}
+
+</body>
+</html>

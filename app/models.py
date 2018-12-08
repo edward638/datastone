@@ -37,6 +37,29 @@ class User(UserMixin, db.Model):
             db.session.rollback()
             raise e
 
+    @staticmethod
+    def show_team(id):
+        try:
+            return db.session.execute('SELECT name, score_avg, score_sd FROM '
+            'player_status WHERE user_id = :id and active = 1 ORDER BY score_avg DESC', dict(id=id))
+
+        except Exception as e:
+            print("show_team failed")
+            db.session.rollback()
+            raise e
+
+    @staticmethod
+    def show_bench(id):
+        try:
+            return db.session.execute('SELECT name, score_avg, score_sd FROM player_status '
+                                        'WHERE user_id = :id and active = 0 ORDER BY score_avg DESC', dict(id=id))
+
+        except Exception as e:
+            print("show_team failed")
+            db.session.rollback()
+            raise e
+
+
 
     def __repr__(self):
         return '<User {}>'.format(self.team_name)
@@ -275,10 +298,6 @@ class PlayerActive(db.Model):
 
     def __repr__(self):
         return '<PlayerActive {}>'.format(self.player_id)
-
-
-
-
 
 
 class TeamScores(db.Model):

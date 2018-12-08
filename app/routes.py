@@ -1,7 +1,7 @@
 from app import app, db
 
 from app.models import PlayerStatus, User, Settings, PlayerWeeklyStats, Week, PlayerActive
-from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm, ResetForm, ResetAllForm, IterateWeekForm, ChooseWeekForm
+from app.forms import LoginForm, DraftForm, RegistrationForm, StartDraftForm, ResetForm, ResetAllForm, IterateWeekForm, ChooseWeekForm, ChooseTeamForm
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
 
@@ -94,6 +94,65 @@ def standings():
             row.append(i)
         rows.append(row)
     return render_template("standings.html", standings=rows, week=week_number)
+
+@app.route('/teams', methods=['GET','POST'])
+def team():
+    form = ChooseTeamForm()
+    users = User.query.all()
+    form.choose_team.choices = [(j.id, j.username) for j in users]
+    if form.submit.data and form.validate_on_submit():
+        results = User.show_team(form.choose_team.data)
+        rows = []
+        user = User.query.filter_by(id=form.choose_team.data).first()
+        user = user.username
+        for x in results:
+            row = []
+            for i in x:
+                row.append(i)
+            rows.append(row)
+
+        bench = User.show_bench(form.choose_team.data)
+        rows1 = []
+        for x in bench:
+            row = []
+            for i in x:
+                row.append(i)
+            rows1.append(row)
+
+        return render_template("team.html", form=form, active=rows, bench=rows1, user=user, show=1)
+
+    return render_template("team.html", form=form)
+
+# @app.route('/week/<week>', methods=['GET','POST'])
+# def show_week(week):
+#     results = PlayerWeeklyStats.show_player_stats(week)
+#     form = ChooseWeekForm()
+#     week1 = Week.query.all()
+#     week_number = [x.week_number for x in week1][0]
+#     form.choose_week.choices = [(i, i) for i in range(1, week_number+1)]
+#
+#     if form.submit.data and form.validate_on_submit():
+#         redirect1 = '/week/' + str(form.choose_week.data)
+#         # print(redirect)
+#         return redirect(redirect1)
+#
+#     rows = []
+#     for x in results:
+#         row = []
+#         for i in x:
+#             # print(i)
+#             row.append(i)
+#         rows.append(row)
+#     team_results = PlayerWeeklyStats.show_team_stats(week)
+#     team_rows = []
+#     for x in team_results:
+#         team_row = []
+#         for i in x:
+#             # print(i)
+#             team_row.append(i)
+#         team_rows.append(team_row)
+#
+#     return render_template("week.html", rows=rows, team_rows=team_rows, week=week, form=form)
 
 @app.route('/week')
 def week():

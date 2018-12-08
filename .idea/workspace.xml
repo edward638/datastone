@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/app/forms.py" afterPath="$PROJECT_DIR$/app/forms.py" />
       <change beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" afterPath="$PROJECT_DIR$/app/routes.py" />
-      <change beforePath="$PROJECT_DIR$/app/templates/standings.html" afterPath="$PROJECT_DIR$/app/templates/standings.html" />
-      <change beforePath="$PROJECT_DIR$/app/templates/week.html" afterPath="$PROJECT_DIR$/app/templates/week.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,62 +29,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="261" column="0" lean-forward="true" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+            <state relative-caret-position="483">
+              <caret line="53" column="91" lean-forward="false" selection-start-line="53" selection-start-column="91" selection-end-line="53" selection-end-column="91" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <marker date="1544310747600" expanded="true" signature="671:700" ph="UPDATE user... " />
-                <marker date="1544310747600" expanded="true" signature="958:975" ph="UPDATE player_status... " />
-                <marker date="1544310747600" expanded="true" signature="958:976" ph="DELETE FROM &quot;user&quot;... " />
-                <marker date="1544310747600" expanded="true" signature="958:978" ph="DELETE FROM users... " />
-                <marker date="1544310747600" expanded="true" signature="2440:2487" ph="UPDATE player_status... " />
-                <marker date="1544310747600" expanded="true" signature="2440:2550" ph="UPDATE player_status... " />
-                <marker date="1544310747600" expanded="true" signature="2872:2892" ph="UPDATE player_status... " />
-                <marker date="1544310747600" expanded="true" signature="2872:2921" ph="UPDATE player_status... " />
-                <marker date="1544310747600" expanded="true" signature="2872:2923" ph="UPDATE player_status... " />
-                <marker date="1544310747600" expanded="true" signature="3865:4895" ph="SELECT i,:we... IND" />
-                <marker date="1544310747600" expanded="true" signature="3865:4918" ph="SELECT i,:we... IND" />
-                <marker date="1544310747600" expanded="true" signature="3901:4010" ph="SELECT (ROUN... player_data" />
-                <marker date="1544310747600" expanded="true" signature="4020:4133" ph="SELECT (ROUN... player_data" />
-                <marker date="1544310747600" expanded="true" signature="4143:4254" ph="SELECT (ROUN... player_data" />
-                <marker date="1544310747600" expanded="true" signature="4264:4377" ph="SELECT (ROUN... player_data" />
-                <marker date="1544310747600" expanded="true" signature="4387:4508" ph="SELECT (ROUN... player_data" />
-                <marker date="1544310747600" expanded="true" signature="4518:4637" ph="SELECT (ROUN... player_data" />
-                <marker date="1544310747600" expanded="true" signature="4647:4756" ph="SELECT (ROUN... player_data" />
-                <marker date="1544310747600" expanded="true" signature="4766:4883" ph="SELECT (ROUN... player_data" />
-                <marker date="1544310747600" expanded="true" signature="5185:5241" ph="UPDATE player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="5276:5336" ph="UPDATE player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="5371:5429" ph="UPDATE player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="5464:5524" ph="UPDATE player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="5559:5627" ph="UPDATE player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="5662:5718" ph="UPDATE player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="5753:5819" ph="UPDATE player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="5854:5918" ph="UPDATE player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="5954:6201" ph="UPDATE player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="5960:6201" ph="UPDATE player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="6471:6762" ph="SELECT name,... player_active" />
-                <marker date="1544310747600" expanded="true" signature="6471:6841" ph="SELECT name,... player_active" />
-                <marker date="1544310747600" expanded="true" signature="6681:6756" ph="SELECT * FRO... player_status" />
-                <marker date="1544310747600" expanded="true" signature="7095:7371" ph="SELECT usern... player_weekly_stats" />
-                <marker date="1544310747600" expanded="true" signature="7095:7389" ph="SELECT usern... player_weekly_stats" />
-                <marker date="1544310747600" expanded="true" signature="7095:7414" ph="SELECT team_... " />
-                <marker date="1544310747600" expanded="true" signature="7095:7433" ph="SELECT team_... " />
-                <marker date="1544310747600" expanded="true" signature="7230:7305" ph="SELECT * FRO... player_status" />
-                <marker date="1544310747600" expanded="true" signature="7646:7677" ph="DELETE FROM player_weekly_stats... " />
-                <marker date="1544310747600" expanded="true" signature="7993:8023" ph="UPDATE settings... " />
-                <marker date="1544310747600" expanded="true" signature="8058:8089" ph="UPDATE user... " />
-                <marker date="1544310747600" expanded="true" signature="8487:8518" ph="UPDATE week... " />
-                <marker date="1544310747600" expanded="true" signature="8761:8828" ph="UPDATE week... " />
-                <marker date="1544310747600" expanded="true" signature="8792:8827" ph="SELECT AVG(w... week" />
-                <marker date="1544310747600" expanded="true" signature="9292:9318" ph="UPDATE week... " />
-                <marker date="1544310747600" expanded="true" signature="9292:9378" ph="INSERT INTO player_active... " />
-                <marker date="1544310747600" expanded="true" signature="9292:9379" ph="INSERT INTO player_active... " />
-                <marker date="1544310747600" expanded="true" signature="9319:9378" ph="SELECT playe... player_status" />
-                <marker date="1544310747600" expanded="true" signature="9684:9960" ph="INSERT INTO player_active... " />
-                <marker date="1544310747600" expanded="true" signature="9797:9872" ph="SELECT * FRO... player_status" />
+                <marker date="1544313343853" expanded="true" signature="671:700" ph="UPDATE user... " />
+                <marker date="1544313343853" expanded="true" signature="958:975" ph="UPDATE player_status... " />
+                <marker date="1544313343853" expanded="true" signature="958:976" ph="DELETE FROM &quot;user&quot;... " />
+                <marker date="1544313343853" expanded="true" signature="958:978" ph="DELETE FROM users... " />
+                <marker date="1544313343853" expanded="true" signature="1232:1357" ph="DELETE FROM &quot;user&quot;... " />
+                <marker date="1544313343853" expanded="true" signature="1592:1745" ph="SELECT name,... player_status" />
+                <marker date="1544313343853" expanded="true" signature="3188:3235" ph="UPDATE player_status... " />
+                <marker date="1544313343853" expanded="true" signature="3188:3298" ph="UPDATE player_status... " />
+                <marker date="1544313343853" expanded="true" signature="3620:3640" ph="UPDATE player_status... " />
+                <marker date="1544313343853" expanded="true" signature="3620:3669" ph="UPDATE player_status... " />
+                <marker date="1544313343853" expanded="true" signature="3620:3671" ph="UPDATE player_status... " />
+                <marker date="1544313343853" expanded="true" signature="4613:5643" ph="SELECT i,:we... IND" />
+                <marker date="1544313343853" expanded="true" signature="4613:5666" ph="SELECT i,:we... IND" />
+                <marker date="1544313343853" expanded="true" signature="4649:4758" ph="SELECT (ROUN... player_data" />
+                <marker date="1544313343853" expanded="true" signature="4768:4881" ph="SELECT (ROUN... player_data" />
+                <marker date="1544313343853" expanded="true" signature="4891:5002" ph="SELECT (ROUN... player_data" />
+                <marker date="1544313343853" expanded="true" signature="5012:5125" ph="SELECT (ROUN... player_data" />
+                <marker date="1544313343853" expanded="true" signature="5135:5256" ph="SELECT (ROUN... player_data" />
+                <marker date="1544313343853" expanded="true" signature="5266:5385" ph="SELECT (ROUN... player_data" />
+                <marker date="1544313343853" expanded="true" signature="5395:5504" ph="SELECT (ROUN... player_data" />
+                <marker date="1544313343853" expanded="true" signature="5514:5631" ph="SELECT (ROUN... player_data" />
+                <marker date="1544313343853" expanded="true" signature="5933:5989" ph="UPDATE player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="6024:6084" ph="UPDATE player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="6119:6177" ph="UPDATE player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="6212:6272" ph="UPDATE player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="6307:6375" ph="UPDATE player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="6410:6466" ph="UPDATE player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="6501:6567" ph="UPDATE player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="6602:6666" ph="UPDATE player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="6702:6949" ph="UPDATE player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="6708:6949" ph="UPDATE player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="7219:7510" ph="SELECT name,... player_active" />
+                <marker date="1544313343853" expanded="true" signature="7219:7589" ph="SELECT name,... player_active" />
+                <marker date="1544313343853" expanded="true" signature="7429:7504" ph="SELECT * FRO... player_status" />
+                <marker date="1544313343853" expanded="true" signature="7843:8119" ph="SELECT usern... player_weekly_stats" />
+                <marker date="1544313343853" expanded="true" signature="7843:8137" ph="SELECT usern... player_weekly_stats" />
+                <marker date="1544313343853" expanded="true" signature="7843:8162" ph="SELECT team_... " />
+                <marker date="1544313343853" expanded="true" signature="7843:8181" ph="SELECT team_... " />
+                <marker date="1544313343853" expanded="true" signature="7978:8053" ph="SELECT * FRO... player_status" />
+                <marker date="1544313343853" expanded="true" signature="8394:8425" ph="DELETE FROM player_weekly_stats... " />
+                <marker date="1544313343853" expanded="true" signature="8741:8771" ph="UPDATE settings... " />
+                <marker date="1544313343853" expanded="true" signature="8806:8837" ph="UPDATE user... " />
+                <marker date="1544313343853" expanded="true" signature="9235:9266" ph="UPDATE week... " />
+                <marker date="1544313343853" expanded="true" signature="9509:9576" ph="UPDATE week... " />
+                <marker date="1544313343853" expanded="true" signature="9540:9575" ph="SELECT AVG(w... week" />
+                <marker date="1544313343853" expanded="true" signature="10040:10066" ph="UPDATE week... " />
+                <marker date="1544313343853" expanded="true" signature="10040:10126" ph="INSERT INTO player_active... " />
+                <marker date="1544313343853" expanded="true" signature="10040:10127" ph="INSERT INTO player_active... " />
+                <marker date="1544313343853" expanded="true" signature="10067:10126" ph="SELECT playe... player_status" />
+                <marker date="1544313343853" expanded="true" signature="10432:10708" ph="INSERT INTO player_active... " />
+                <marker date="1544313343853" expanded="true" signature="10545:10620" ph="SELECT * FRO... player_status" />
               </folding>
             </state>
           </provider>
@@ -115,8 +115,8 @@
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="708">
-              <caret line="49" column="15" lean-forward="false" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+            <state relative-caret-position="1044">
+              <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -124,14 +124,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1852">
-              <caret line="93" column="25" lean-forward="true" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
+            <state relative-caret-position="521">
+              <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="team.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/team.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="58" column="28" lean-forward="true" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -159,18 +169,8 @@
       <file leaf-file-name="week.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/week.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+            <state relative-caret-position="294">
+              <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -233,11 +233,12 @@
         <option value="$PROJECT_DIR$/app/templates/index.html" />
         <option value="$PROJECT_DIR$/app/templates/draft.html" />
         <option value="$PROJECT_DIR$/app/templates/header.html" />
-        <option value="$PROJECT_DIR$/app/forms.py" />
         <option value="$PROJECT_DIR$/app/templates/week.html" />
-        <option value="$PROJECT_DIR$/app/models.py" />
-        <option value="$PROJECT_DIR$/app/routes.py" />
         <option value="$PROJECT_DIR$/app/templates/standings.html" />
+        <option value="$PROJECT_DIR$/app/forms.py" />
+        <option value="$PROJECT_DIR$/app/routes.py" />
+        <option value="$PROJECT_DIR$/app/templates/team.html" />
+        <option value="$PROJECT_DIR$/app/models.py" />
       </list>
     </option>
   </component>
@@ -420,65 +421,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <marker date="1544310747600" expanded="true" signature="671:700" ph="UPDATE user... " />
-            <marker date="1544310747600" expanded="true" signature="958:975" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="958:976" ph="DELETE FROM &quot;user&quot;... " />
-            <marker date="1544310747600" expanded="true" signature="958:978" ph="DELETE FROM users... " />
-            <marker date="1544310747600" expanded="true" signature="2440:2487" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2440:2550" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2892" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2921" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2923" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="3865:4895" ph="SELECT i,:we... IND" />
-            <marker date="1544310747600" expanded="true" signature="3865:4918" ph="SELECT i,:we... IND" />
-            <marker date="1544310747600" expanded="true" signature="3901:4010" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4020:4133" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4143:4254" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4264:4377" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4387:4508" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4518:4637" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4647:4756" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4766:4883" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="5185:5241" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5276:5336" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5371:5429" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5464:5524" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5559:5627" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5662:5718" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5753:5819" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5854:5918" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5954:6201" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5960:6201" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="6471:6762" ph="SELECT name,... player_active" />
-            <marker date="1544310747600" expanded="true" signature="6471:6841" ph="SELECT name,... player_active" />
-            <marker date="1544310747600" expanded="true" signature="6681:6756" ph="SELECT * FRO... player_status" />
-            <marker date="1544310747600" expanded="true" signature="7095:7371" ph="SELECT usern... player_weekly_stats" />
-            <marker date="1544310747600" expanded="true" signature="7095:7389" ph="SELECT usern... player_weekly_stats" />
-            <marker date="1544310747600" expanded="true" signature="7095:7414" ph="SELECT team_... " />
-            <marker date="1544310747600" expanded="true" signature="7095:7433" ph="SELECT team_... " />
-            <marker date="1544310747600" expanded="true" signature="7230:7305" ph="SELECT * FRO... player_status" />
-            <marker date="1544310747600" expanded="true" signature="7646:7677" ph="DELETE FROM player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="7993:8023" ph="UPDATE settings... " />
-            <marker date="1544310747600" expanded="true" signature="8058:8089" ph="UPDATE user... " />
-            <marker date="1544310747600" expanded="true" signature="8487:8518" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="8761:8828" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="8792:8827" ph="SELECT AVG(w... week" />
-            <marker date="1544310747600" expanded="true" signature="9292:9318" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="9292:9378" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9292:9379" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9319:9378" ph="SELECT playe... player_status" />
-            <marker date="1544310747600" expanded="true" signature="9684:9960" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9797:9872" ph="SELECT * FRO... player_status" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -583,55 +525,57 @@
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <marker date="1544310747600" expanded="true" signature="671:700" ph="UPDATE user... " />
-            <marker date="1544310747600" expanded="true" signature="958:975" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="958:976" ph="DELETE FROM &quot;user&quot;... " />
-            <marker date="1544310747600" expanded="true" signature="958:978" ph="DELETE FROM users... " />
-            <marker date="1544310747600" expanded="true" signature="2440:2487" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2440:2550" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2892" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2921" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2923" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="3865:4895" ph="SELECT i,:we... IND" />
-            <marker date="1544310747600" expanded="true" signature="3865:4918" ph="SELECT i,:we... IND" />
-            <marker date="1544310747600" expanded="true" signature="3901:4010" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4020:4133" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4143:4254" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4264:4377" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4387:4508" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4518:4637" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4647:4756" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4766:4883" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="5185:5241" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5276:5336" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5371:5429" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5464:5524" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5559:5627" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5662:5718" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5753:5819" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5854:5918" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5954:6201" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5960:6201" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="6471:6762" ph="SELECT name,... player_active" />
-            <marker date="1544310747600" expanded="true" signature="6471:6841" ph="SELECT name,... player_active" />
-            <marker date="1544310747600" expanded="true" signature="6681:6756" ph="SELECT * FRO... player_status" />
-            <marker date="1544310747600" expanded="true" signature="7095:7371" ph="SELECT usern... player_weekly_stats" />
-            <marker date="1544310747600" expanded="true" signature="7095:7389" ph="SELECT usern... player_weekly_stats" />
-            <marker date="1544310747600" expanded="true" signature="7095:7414" ph="SELECT team_... " />
-            <marker date="1544310747600" expanded="true" signature="7095:7433" ph="SELECT team_... " />
-            <marker date="1544310747600" expanded="true" signature="7230:7305" ph="SELECT * FRO... player_status" />
-            <marker date="1544310747600" expanded="true" signature="7646:7677" ph="DELETE FROM player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="7993:8023" ph="UPDATE settings... " />
-            <marker date="1544310747600" expanded="true" signature="8058:8089" ph="UPDATE user... " />
-            <marker date="1544310747600" expanded="true" signature="8487:8518" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="8761:8828" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="8792:8827" ph="SELECT AVG(w... week" />
-            <marker date="1544310747600" expanded="true" signature="9292:9318" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="9292:9378" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9292:9379" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9319:9378" ph="SELECT playe... player_status" />
-            <marker date="1544310747600" expanded="true" signature="9684:9960" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9797:9872" ph="SELECT * FRO... player_status" />
+            <marker date="1544313343853" expanded="true" signature="671:700" ph="UPDATE user... " />
+            <marker date="1544313343853" expanded="true" signature="958:975" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="958:976" ph="DELETE FROM &quot;user&quot;... " />
+            <marker date="1544313343853" expanded="true" signature="958:978" ph="DELETE FROM users... " />
+            <marker date="1544313343853" expanded="true" signature="1232:1357" ph="DELETE FROM &quot;user&quot;... " />
+            <marker date="1544313343853" expanded="true" signature="1592:1745" ph="SELECT name,... player_status" />
+            <marker date="1544313343853" expanded="true" signature="3188:3235" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3188:3298" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3620:3640" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3620:3669" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3620:3671" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="4613:5643" ph="SELECT i,:we... IND" />
+            <marker date="1544313343853" expanded="true" signature="4613:5666" ph="SELECT i,:we... IND" />
+            <marker date="1544313343853" expanded="true" signature="4649:4758" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="4768:4881" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="4891:5002" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5012:5125" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5135:5256" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5266:5385" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5395:5504" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5514:5631" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5933:5989" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6024:6084" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6119:6177" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6212:6272" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6307:6375" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6410:6466" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6501:6567" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6602:6666" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6702:6949" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6708:6949" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="7219:7510" ph="SELECT name,... player_active" />
+            <marker date="1544313343853" expanded="true" signature="7219:7589" ph="SELECT name,... player_active" />
+            <marker date="1544313343853" expanded="true" signature="7429:7504" ph="SELECT * FRO... player_status" />
+            <marker date="1544313343853" expanded="true" signature="7843:8119" ph="SELECT usern... player_weekly_stats" />
+            <marker date="1544313343853" expanded="true" signature="7843:8137" ph="SELECT usern... player_weekly_stats" />
+            <marker date="1544313343853" expanded="true" signature="7843:8162" ph="SELECT team_... " />
+            <marker date="1544313343853" expanded="true" signature="7843:8181" ph="SELECT team_... " />
+            <marker date="1544313343853" expanded="true" signature="7978:8053" ph="SELECT * FRO... player_status" />
+            <marker date="1544313343853" expanded="true" signature="8394:8425" ph="DELETE FROM player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="8741:8771" ph="UPDATE settings... " />
+            <marker date="1544313343853" expanded="true" signature="8806:8837" ph="UPDATE user... " />
+            <marker date="1544313343853" expanded="true" signature="9235:9266" ph="UPDATE week... " />
+            <marker date="1544313343853" expanded="true" signature="9509:9576" ph="UPDATE week... " />
+            <marker date="1544313343853" expanded="true" signature="9540:9575" ph="SELECT AVG(w... week" />
+            <marker date="1544313343853" expanded="true" signature="10040:10066" ph="UPDATE week... " />
+            <marker date="1544313343853" expanded="true" signature="10040:10126" ph="INSERT INTO player_active... " />
+            <marker date="1544313343853" expanded="true" signature="10040:10127" ph="INSERT INTO player_active... " />
+            <marker date="1544313343853" expanded="true" signature="10067:10126" ph="SELECT playe... player_status" />
+            <marker date="1544313343853" expanded="true" signature="10432:10708" ph="INSERT INTO player_active... " />
+            <marker date="1544313343853" expanded="true" signature="10545:10620" ph="SELECT * FRO... player_status" />
           </folding>
         </state>
       </provider>
@@ -716,55 +660,57 @@
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <marker date="1544310747600" expanded="true" signature="671:700" ph="UPDATE user... " />
-            <marker date="1544310747600" expanded="true" signature="958:975" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="958:976" ph="DELETE FROM &quot;user&quot;... " />
-            <marker date="1544310747600" expanded="true" signature="958:978" ph="DELETE FROM users... " />
-            <marker date="1544310747600" expanded="true" signature="2440:2487" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2440:2550" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2892" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2921" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2923" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="3865:4895" ph="SELECT i,:we... IND" />
-            <marker date="1544310747600" expanded="true" signature="3865:4918" ph="SELECT i,:we... IND" />
-            <marker date="1544310747600" expanded="true" signature="3901:4010" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4020:4133" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4143:4254" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4264:4377" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4387:4508" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4518:4637" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4647:4756" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4766:4883" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="5185:5241" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5276:5336" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5371:5429" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5464:5524" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5559:5627" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5662:5718" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5753:5819" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5854:5918" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5954:6201" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5960:6201" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="6471:6762" ph="SELECT name,... player_active" />
-            <marker date="1544310747600" expanded="true" signature="6471:6841" ph="SELECT name,... player_active" />
-            <marker date="1544310747600" expanded="true" signature="6681:6756" ph="SELECT * FRO... player_status" />
-            <marker date="1544310747600" expanded="true" signature="7095:7371" ph="SELECT usern... player_weekly_stats" />
-            <marker date="1544310747600" expanded="true" signature="7095:7389" ph="SELECT usern... player_weekly_stats" />
-            <marker date="1544310747600" expanded="true" signature="7095:7414" ph="SELECT team_... " />
-            <marker date="1544310747600" expanded="true" signature="7095:7433" ph="SELECT team_... " />
-            <marker date="1544310747600" expanded="true" signature="7230:7305" ph="SELECT * FRO... player_status" />
-            <marker date="1544310747600" expanded="true" signature="7646:7677" ph="DELETE FROM player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="7993:8023" ph="UPDATE settings... " />
-            <marker date="1544310747600" expanded="true" signature="8058:8089" ph="UPDATE user... " />
-            <marker date="1544310747600" expanded="true" signature="8487:8518" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="8761:8828" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="8792:8827" ph="SELECT AVG(w... week" />
-            <marker date="1544310747600" expanded="true" signature="9292:9318" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="9292:9378" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9292:9379" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9319:9378" ph="SELECT playe... player_status" />
-            <marker date="1544310747600" expanded="true" signature="9684:9960" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9797:9872" ph="SELECT * FRO... player_status" />
+            <marker date="1544313343853" expanded="true" signature="671:700" ph="UPDATE user... " />
+            <marker date="1544313343853" expanded="true" signature="958:975" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="958:976" ph="DELETE FROM &quot;user&quot;... " />
+            <marker date="1544313343853" expanded="true" signature="958:978" ph="DELETE FROM users... " />
+            <marker date="1544313343853" expanded="true" signature="1232:1357" ph="DELETE FROM &quot;user&quot;... " />
+            <marker date="1544313343853" expanded="true" signature="1592:1745" ph="SELECT name,... player_status" />
+            <marker date="1544313343853" expanded="true" signature="3188:3235" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3188:3298" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3620:3640" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3620:3669" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3620:3671" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="4613:5643" ph="SELECT i,:we... IND" />
+            <marker date="1544313343853" expanded="true" signature="4613:5666" ph="SELECT i,:we... IND" />
+            <marker date="1544313343853" expanded="true" signature="4649:4758" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="4768:4881" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="4891:5002" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5012:5125" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5135:5256" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5266:5385" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5395:5504" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5514:5631" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5933:5989" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6024:6084" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6119:6177" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6212:6272" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6307:6375" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6410:6466" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6501:6567" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6602:6666" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6702:6949" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6708:6949" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="7219:7510" ph="SELECT name,... player_active" />
+            <marker date="1544313343853" expanded="true" signature="7219:7589" ph="SELECT name,... player_active" />
+            <marker date="1544313343853" expanded="true" signature="7429:7504" ph="SELECT * FRO... player_status" />
+            <marker date="1544313343853" expanded="true" signature="7843:8119" ph="SELECT usern... player_weekly_stats" />
+            <marker date="1544313343853" expanded="true" signature="7843:8137" ph="SELECT usern... player_weekly_stats" />
+            <marker date="1544313343853" expanded="true" signature="7843:8162" ph="SELECT team_... " />
+            <marker date="1544313343853" expanded="true" signature="7843:8181" ph="SELECT team_... " />
+            <marker date="1544313343853" expanded="true" signature="7978:8053" ph="SELECT * FRO... player_status" />
+            <marker date="1544313343853" expanded="true" signature="8394:8425" ph="DELETE FROM player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="8741:8771" ph="UPDATE settings... " />
+            <marker date="1544313343853" expanded="true" signature="8806:8837" ph="UPDATE user... " />
+            <marker date="1544313343853" expanded="true" signature="9235:9266" ph="UPDATE week... " />
+            <marker date="1544313343853" expanded="true" signature="9509:9576" ph="UPDATE week... " />
+            <marker date="1544313343853" expanded="true" signature="9540:9575" ph="SELECT AVG(w... week" />
+            <marker date="1544313343853" expanded="true" signature="10040:10066" ph="UPDATE week... " />
+            <marker date="1544313343853" expanded="true" signature="10040:10126" ph="INSERT INTO player_active... " />
+            <marker date="1544313343853" expanded="true" signature="10040:10127" ph="INSERT INTO player_active... " />
+            <marker date="1544313343853" expanded="true" signature="10067:10126" ph="SELECT playe... player_status" />
+            <marker date="1544313343853" expanded="true" signature="10432:10708" ph="INSERT INTO player_active... " />
+            <marker date="1544313343853" expanded="true" signature="10545:10620" ph="SELECT * FRO... player_status" />
           </folding>
         </state>
       </provider>
@@ -931,22 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/week.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="41" column="47" lean-forward="false" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/user.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -981,13 +911,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/forms.py">
+    <entry file="file://$PROJECT_DIR$/app/templates/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="49" column="15" lean-forward="false" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="672">
+          <caret line="41" column="47" lean-forward="false" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/week.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -999,71 +935,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models.py">
+    <entry file="file://$PROJECT_DIR$/app/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="261" column="0" lean-forward="true" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+        <state relative-caret-position="521">
+          <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <marker date="1544310747600" expanded="true" signature="671:700" ph="UPDATE user... " />
-            <marker date="1544310747600" expanded="true" signature="958:975" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="958:976" ph="DELETE FROM &quot;user&quot;... " />
-            <marker date="1544310747600" expanded="true" signature="958:978" ph="DELETE FROM users... " />
-            <marker date="1544310747600" expanded="true" signature="2440:2487" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2440:2550" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2892" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2921" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="2872:2923" ph="UPDATE player_status... " />
-            <marker date="1544310747600" expanded="true" signature="3865:4895" ph="SELECT i,:we... IND" />
-            <marker date="1544310747600" expanded="true" signature="3865:4918" ph="SELECT i,:we... IND" />
-            <marker date="1544310747600" expanded="true" signature="3901:4010" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4020:4133" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4143:4254" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4264:4377" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4387:4508" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4518:4637" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4647:4756" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="4766:4883" ph="SELECT (ROUN... player_data" />
-            <marker date="1544310747600" expanded="true" signature="5185:5241" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5276:5336" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5371:5429" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5464:5524" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5559:5627" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5662:5718" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5753:5819" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5854:5918" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5954:6201" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="5960:6201" ph="UPDATE player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="6471:6762" ph="SELECT name,... player_active" />
-            <marker date="1544310747600" expanded="true" signature="6471:6841" ph="SELECT name,... player_active" />
-            <marker date="1544310747600" expanded="true" signature="6681:6756" ph="SELECT * FRO... player_status" />
-            <marker date="1544310747600" expanded="true" signature="7095:7371" ph="SELECT usern... player_weekly_stats" />
-            <marker date="1544310747600" expanded="true" signature="7095:7389" ph="SELECT usern... player_weekly_stats" />
-            <marker date="1544310747600" expanded="true" signature="7095:7414" ph="SELECT team_... " />
-            <marker date="1544310747600" expanded="true" signature="7095:7433" ph="SELECT team_... " />
-            <marker date="1544310747600" expanded="true" signature="7230:7305" ph="SELECT * FRO... player_status" />
-            <marker date="1544310747600" expanded="true" signature="7646:7677" ph="DELETE FROM player_weekly_stats... " />
-            <marker date="1544310747600" expanded="true" signature="7993:8023" ph="UPDATE settings... " />
-            <marker date="1544310747600" expanded="true" signature="8058:8089" ph="UPDATE user... " />
-            <marker date="1544310747600" expanded="true" signature="8487:8518" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="8761:8828" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="8792:8827" ph="SELECT AVG(w... week" />
-            <marker date="1544310747600" expanded="true" signature="9292:9318" ph="UPDATE week... " />
-            <marker date="1544310747600" expanded="true" signature="9292:9378" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9292:9379" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9319:9378" ph="SELECT playe... player_status" />
-            <marker date="1544310747600" expanded="true" signature="9684:9960" ph="INSERT INTO player_active... " />
-            <marker date="1544310747600" expanded="true" signature="9797:9872" ph="SELECT * FRO... player_status" />
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.py">
+    <entry file="file://$PROJECT_DIR$/app/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1852">
-          <caret line="93" column="25" lean-forward="true" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
+        <state relative-caret-position="1044">
+          <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/team.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="58" column="28" lean-forward="true" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="53" column="91" lean-forward="false" selection-start-line="53" selection-start-column="91" selection-end-line="53" selection-end-column="91" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <marker date="1544313343853" expanded="true" signature="671:700" ph="UPDATE user... " />
+            <marker date="1544313343853" expanded="true" signature="958:975" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="958:976" ph="DELETE FROM &quot;user&quot;... " />
+            <marker date="1544313343853" expanded="true" signature="958:978" ph="DELETE FROM users... " />
+            <marker date="1544313343853" expanded="true" signature="1232:1357" ph="DELETE FROM &quot;user&quot;... " />
+            <marker date="1544313343853" expanded="true" signature="1592:1745" ph="SELECT name,... player_status" />
+            <marker date="1544313343853" expanded="true" signature="3188:3235" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3188:3298" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3620:3640" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3620:3669" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="3620:3671" ph="UPDATE player_status... " />
+            <marker date="1544313343853" expanded="true" signature="4613:5643" ph="SELECT i,:we... IND" />
+            <marker date="1544313343853" expanded="true" signature="4613:5666" ph="SELECT i,:we... IND" />
+            <marker date="1544313343853" expanded="true" signature="4649:4758" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="4768:4881" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="4891:5002" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5012:5125" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5135:5256" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5266:5385" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5395:5504" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5514:5631" ph="SELECT (ROUN... player_data" />
+            <marker date="1544313343853" expanded="true" signature="5933:5989" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6024:6084" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6119:6177" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6212:6272" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6307:6375" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6410:6466" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6501:6567" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6602:6666" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6702:6949" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="6708:6949" ph="UPDATE player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="7219:7510" ph="SELECT name,... player_active" />
+            <marker date="1544313343853" expanded="true" signature="7219:7589" ph="SELECT name,... player_active" />
+            <marker date="1544313343853" expanded="true" signature="7429:7504" ph="SELECT * FRO... player_status" />
+            <marker date="1544313343853" expanded="true" signature="7843:8119" ph="SELECT usern... player_weekly_stats" />
+            <marker date="1544313343853" expanded="true" signature="7843:8137" ph="SELECT usern... player_weekly_stats" />
+            <marker date="1544313343853" expanded="true" signature="7843:8162" ph="SELECT team_... " />
+            <marker date="1544313343853" expanded="true" signature="7843:8181" ph="SELECT team_... " />
+            <marker date="1544313343853" expanded="true" signature="7978:8053" ph="SELECT * FRO... player_status" />
+            <marker date="1544313343853" expanded="true" signature="8394:8425" ph="DELETE FROM player_weekly_stats... " />
+            <marker date="1544313343853" expanded="true" signature="8741:8771" ph="UPDATE settings... " />
+            <marker date="1544313343853" expanded="true" signature="8806:8837" ph="UPDATE user... " />
+            <marker date="1544313343853" expanded="true" signature="9235:9266" ph="UPDATE week... " />
+            <marker date="1544313343853" expanded="true" signature="9509:9576" ph="UPDATE week... " />
+            <marker date="1544313343853" expanded="true" signature="9540:9575" ph="SELECT AVG(w... week" />
+            <marker date="1544313343853" expanded="true" signature="10040:10066" ph="UPDATE week... " />
+            <marker date="1544313343853" expanded="true" signature="10040:10126" ph="INSERT INTO player_active... " />
+            <marker date="1544313343853" expanded="true" signature="10040:10127" ph="INSERT INTO player_active... " />
+            <marker date="1544313343853" expanded="true" signature="10067:10126" ph="SELECT playe... player_status" />
+            <marker date="1544313343853" expanded="true" signature="10432:10708" ph="INSERT INTO player_active... " />
+            <marker date="1544313343853" expanded="true" signature="10545:10620" ph="SELECT * FRO... player_status" />
           </folding>
         </state>
       </provider>
