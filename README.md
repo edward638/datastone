@@ -36,7 +36,7 @@ flask db upgrade
 7. In pgAdmin, go to your database, access the week table, and insert a row where week_number = 0.
 8. Similarly, access the settings table and insert a row where active = 0.
 9. Right click on the player_data on the navigation bar and import AUDL_2018.csv (found in db/data/fixeddata). Under "Miscellaneous", choose **Header = Yes and Delimiter = ","**. This will populate the player_data table.
-10. Using the pgAdmin query tool, run this query to update the player_status table.
+10. Using the pgAdmin query tool, run this query (this can be found in db/begin.sql) to update the player_status table.
 ```sql
 WITH IND(i) AS (SELECT * FROM generate_series(0, (SELECT COUNT(*) FROM player_data) - 1, 1))  
 INSERT INTO player_status SELECT  
