@@ -14,6 +14,7 @@ To compile and deploy Datastone, please follow these instructions:
 1.  Clone the repository at https://github.com/edward638/datastone/.
 2. Install PostgreSQL and pgAdmin 4. 
 3. In pgAdmin, create a new database called datastone.
+![alt text](images/create_database.PNG)
 4. In your terminal, go to the appropriate directory and run the following commands to install the following libraries. 
 
 ```console
@@ -25,6 +26,7 @@ pip install flask-login
 pip install flask-migrate
 ```
 5. Ensure that the POSTGRES variable in config.py is set up correctly, and matches the properties of your PostgreSQL server.
+![alt text](images/config_postgres.PNG)
 6. Run the following commands to set up the tables in your database.
 ```console
 flask db init
