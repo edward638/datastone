@@ -3,8 +3,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 POSTGRES = {
     'user': 'postgres',
-    'pw': 'qwerty',
-    'db': 'datastone2',
+    'pw': 'QfJ240904!',
+    'db': 'datastone',
     'host': 'localhost',
     'port': '5432',
 }

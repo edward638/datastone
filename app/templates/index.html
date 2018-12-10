@@ -11,7 +11,7 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 
-<h1>Welcome to Fantasy Frisbee!</h1>
+<img src="https://i.imgur.com/606befu.jpg" width="300" height="150">
 
 <hr>
         {% with messages = get_flashed_messages() %}
@@ -29,9 +29,9 @@
 
 {% if is_active == 1 %}
 
-    <h1>Currently, it is week: {{ week_number }}</h1>
+    <h1>Week Number: {{ week_number }}</h1>
     {% if week_number < 16 %}
-        <h2>Iterate to Next Week</h2>
+        <h2>Simulate Next Week</h2>
         {% block content2 %}
             <form action="{{ url_for('iterate_week') }}" method="post" novalidate>
                 {{ iterate.hidden_tag() }}
