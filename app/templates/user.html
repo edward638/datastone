@@ -7,16 +7,21 @@
 <body>
 
 {% include "header.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
     <h1>Welcome to your home page, {{ current_user.username }}!</h1>
 
 <h1>{{ error }}</h1>
 
 <form action="" method=post>
-    <table border="1">
+    <table class="table" style="width: 40%">
+    <thead>
         <tr>
             <th>Player</th>
             <th>Set Active</th>
         </tr>
+        </thead>
+        <tbody>
         {% for player in player_list %}
             <tr>
                 <td>{{ player[1] }}</td>
@@ -27,6 +32,7 @@
                 ></td>
             </tr>
         {% endfor %}
+        </tbody>
     </table>
     With selected:
     <input type=submit value=activate>
