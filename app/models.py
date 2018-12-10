@@ -12,9 +12,9 @@ from flask_login import UserMixin
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    team_name = db.Column(db.String(64), index=True)
+    # team_name = db.Column(db.String(64), index=True)
     username = db.Column(db.String(64), index=True)
-    cum_score = db.Column(db.REAL)
+    # cum_score = db.Column(db.REAL)
 
     # @staticmethod
     # def reset():

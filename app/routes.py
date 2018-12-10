@@ -201,7 +201,12 @@ def draft():
         settings = Settings.query.all()
         is_active = [x.active for x in settings][0]
         form.player_id.choices = [(i.player_id, i.name) for i in players if i.user_id == -1]
-        form.user_id.choices = [(j.id, j.username) for j in user_list]
+
+        # use this to allow users to only draft for themselves if logged in
+        # form.user_id.choices = [(j.id, j.username) for j in user_list]
+
+        # use this to allow users to draft for anyone if logged in
+        form.user_id.choices = [(j.id, j.username) for j in users]
 
         if start.submit.data and start.validate_on_submit() and is_active != 1:
             print("start validated")
