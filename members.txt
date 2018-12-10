@@ -1,14 +1,13 @@
-TEAM MEMBERS: Remy Freire, Jeffrey He, Neil Luo, Junmo Ryang, Edward Zhuang
+Edward Zhuang - Eddie's overall contribution to the project was significant: he managed the back end of our application in Flask, helping convert SQL tables to classes and SQL queries into methods. Eddie was heavily involved in adjusting table schemas and relationships between tables, and also prepared the configuration instructions for the TAs. 
 
-Work done:
+Junmo Ryang - Junmo was responsible mostly for scraping the raw CSV files from UltiAnalytics, processing the data, using Python to calculate means and standard deviations
+for each statistic for each player, and outputing all of these values into the player_data table. Since the last milestone, Junmo helped re-design the schemas for the 
+database and construct the E/R diagram.
 
-Remy Freire:Hello Created general description of application, assumptions about data, description of web interface, and general plan for populating database.
+Neil Luo - Neil worked hard on both the front and back ends of the project. On the back end, he created the login system in Flask, allowing users to create their own
+accounts with usernames and passwords. On the front end, Neil worked hard on the user interface (UI), making our application look professional and easy to use. 
 
-Jeffrey He: Devised metrics to analyze offensive and defensive efficiencies of players, along with a scoring mechanism for fantasy league match-ups.
+Remy Freire - Remy wrote most of the SQL queries to sample the data, simulating statistics for each player for each week. He collaborated closely with Eddie to manage
+the Python classes and methods in Flask, making sure everything fit the schemas and relationships we had developed. Since the last milestone, Remy helped tie up loose ends in Flask and SQL queries, and wrote the final report for the project.
 
-Neil Luo: Created sample SQL code and statement files.
-
-Junmo Ryang: Worked with Edward Zhuang to develop E/R diagram for database design and list of database tables with keys declared.
-
-Edward Zhuang: Worked with Junmo Ryang to develop E/R diagram for database design and list of database tables with keys declared.
-
+Jeffrey He - Jeff was crucial at the start of the project, helping design the database, schemas, and relationships. Since the last milestone, Jeff collaborated with Junmo to create the final E/R diagram and helped Remy with the final report. He also worked with Neil on some aspects of the UI. 
