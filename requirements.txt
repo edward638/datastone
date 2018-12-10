@@ -7,3 +7,4 @@ Flask-WTF==0.14.2
 psycopg2==2.7.5
 SQLAlchemy==1.2.13
 WTForms==2.2.1
+Flask-Bootstrap==3.3.7
