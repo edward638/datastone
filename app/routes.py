@@ -191,45 +191,49 @@ def show_week(week):
 
 @app.route('/draft', methods=['GET', 'POST'])
 def draft():
-    start = StartDraftForm()
-    form = DraftForm()
-    players = PlayerStatus.query.all()
-    users = User.query.all()
-    settings = Settings.query.all()
-    is_active = [x.active for x in settings][0]
-    form.player_id.choices = [(i.player_id, i.name) for i in players if i.user_id == -1]
-    form.user_id.choices = [(j.id, j.username) for j in users]
+    if current_user.is_authenticated:
+        start = StartDraftForm()
+        form = DraftForm()
+        players = PlayerStatus.query.all()
+        users = User.query.all()
+        user_list = [i for i in users if i.id == current_user.id]
 
-    if start.submit.data and start.validate_on_submit() and is_active != 1:
-        print("start validated")
-        settings_update = Settings.query.first()
-        settings_update.active = 1
-        db.session.commit()
+        settings = Settings.query.all()
+        is_active = [x.active for x in settings][0]
+        form.player_id.choices = [(i.player_id, i.name) for i in players if i.user_id == -1]
+        form.user_id.choices = [(j.id, j.username) for j in user_list]
 
-        for i in range(1, 17):
-            PlayerWeeklyStats.populate(i)
-        PlayerWeeklyStats.remove_negatives()
+        if start.submit.data and start.validate_on_submit() and is_active != 1:
+            print("start validated")
+            settings_update = Settings.query.first()
+            settings_update.active = 1
+            db.session.commit()
 
-        return redirect('/draft')
+            for i in range(1, 17):
+                PlayerWeeklyStats.populate(i)
+            PlayerWeeklyStats.remove_negatives()
 
-    if form.validate_on_submit() and form.submit.data:
-        print("form validated")
-        player_update = PlayerStatus.query.filter_by(player_id=form.player_id.data).first()
-        player_update.user_id = form.user_id.data
-        db.session.commit()
-        return redirect('/draft')
+            return redirect('/draft')
 
-    draftees = dict()
-    max = 0
-    for x in users:
-        draftees[x.username] = list()
-        for player in PlayerStatus.query.filter_by(user_id=x.id):
-            draftees[x.username].append(player.name)
-        if len(draftees[x.username]) > max:
-            max = len(draftees[x.username])
+        if form.validate_on_submit() and form.submit.data:
+            print("form validated")
+            player_update = PlayerStatus.query.filter_by(player_id=form.player_id.data).first()
+            player_update.user_id = form.user_id.data
+            db.session.commit()
+            return redirect('/draft')
 
-    return render_template("draft.html", start=start, form=form, is_active=is_active, draftees=draftees, max=max)
+        draftees = dict()
+        max = 0
+        for x in users:
+            draftees[x.username] = list()
+            for player in PlayerStatus.query.filter_by(user_id=x.id):
+                draftees[x.username].append(player.name)
+            if len(draftees[x.username]) > max:
+                max = len(draftees[x.username])
 
+        return render_template("draft.html", start=start, form=form, is_active=is_active, draftees=draftees, max=max)
+    else:
+        return render_template("user_default.html")
 
 @app.route('/reset', methods=['GET', 'POST'])
 def reset_draft():
