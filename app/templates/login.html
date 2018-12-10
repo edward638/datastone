@@ -8,11 +8,20 @@
 
 <body>
 {% include "header.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 <h1>Sign in here!</h1>
 
     {% block content %}
-    <form action="" method="post" novalidate>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+    <br>
+    <p>New User? <a href="/register">Click to Register!</a></p>
+
+<!--     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
             {{ form.username.label }}<br>
@@ -27,7 +36,6 @@
     </form>
     {% endblock %}
 
-    <p>New User? <a href="/register">Click to Register!</a></p>
-
+    <p>New User? <a href="/register">Click to Register!</a></p> -->
 </body>
 </html>

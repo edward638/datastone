@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Standings</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/standings.css" media="screen" /> -->
 </head>
 <body>
 
 {% include "header.html" %}
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Wins</th>
-        <th>Losses</th>
-    </tr>
-    <tr>
-        <td>Eddie</td>
-        <td>2</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>Jeffrey</td>
-        <td>1</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>Remy</td>
-        <td>0</td>
-        <td>2</td>
-    </tr>
-</table>
+
+{% if week == 16 %}
+    <h2>Final Standings</h2>
+    {% else %}
+    <h2>Current Standings</h2>
+{% endif %}
+
+
+    <table class="table" style="width: 400px;">
+      <thead>
+        <tr>
+            <th>Username</th>
+            <th>Overall Score</th>
+        </tr>
+      </thead>
+      </tbody>
+        {% for x in standings %}
+
+        <tr>
+            {% for i in x %}
+                <td>{{ i }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
 
 </body>
 </html>

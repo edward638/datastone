@@ -39,3 +39,18 @@ class RegistrationForm(FlaskForm):
 
 class ResetForm(FlaskForm):
     submit = SubmitField('Reset Season')
+
+class ResetAllForm(FlaskForm):
+    submit = SubmitField('Reset Season and Users')
+
+class IterateWeekForm(FlaskForm):
+    submit = SubmitField('Next')
+
+class ChooseWeekForm(FlaskForm):
+    choose_week = SelectField(u'Choose Week', coerce=int)
+    submit = SubmitField('Go')
+
+class ChooseTeamForm(FlaskForm):
+    choose_team = SelectField(u'Select User', coerce=int)
+    submit = SubmitField('Go')
+
