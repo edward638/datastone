@@ -312,6 +312,7 @@ class TeamScores(db.Model):
 
 class Weeks(db.Model):
     week_number = db.Column(db.Integer, primary_key=True)
+    active = db.Column(db.Integer)
 
     def __repr__(self):
         return '<Weeks {}>'.format(self.week_number)
