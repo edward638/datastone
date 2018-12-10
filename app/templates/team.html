@@ -7,18 +7,24 @@
 <body>
 
 {% include "header.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 <h2>Choose Team</h2>
 
 {% block content %}
-    <form action="" method="post" novalidate>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+<!--     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
             {{ form.choose_team.label }}
             {{ form.choose_team() }}
         </p>
         <p>{{ form.submit() }}</p>
-    </form>
+    </form> -->
 {% endblock %}
 
 
@@ -29,33 +35,35 @@
 <h1>{{ user }}</h1>
 
 <h2>Active Roster</h2>
-    <table border="1">
-
-        <tr>
-            <th>Player Name</th>
-            <th>Average Score</th>
-            <th>Score Standard Deviation</th>
-        </tr>
-
-        {% for x in active %}
+    <table class="table">
+        <thead>
             <tr>
-            {% for i in x %}
-                <td>{{ i }}</td>
-            {% endfor %}
+                <th>Player Name</th>
+                <th>Average Score</th>
+                <th>Score Standard Deviation</th>
             </tr>
-        {% endfor %}
-
+        </thead>
+        <tbody>
+            {% for x in active %}
+                <tr>
+                {% for i in x %}
+                    <td>{{ i }}</td>
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 
     <h2>Bench Roster</h2>
-    <table border="1">
-
+    <table class="table">
+        <thead>
         <tr>
             <th>Player Name</th>
             <th>Average Score</th>
             <th>Score Standard Deviation</th>
         </tr>
-
+        </thead>
+        <tbody>
         {% for x in bench %}
             <tr>
             {% for i in x %}
@@ -63,6 +71,7 @@
             {% endfor %}
             </tr>
         {% endfor %}
+        </tbody>
 
     </table>
 

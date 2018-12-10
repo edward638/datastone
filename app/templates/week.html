@@ -7,31 +7,37 @@
 <body>
 
 {% include "header.html" %}
-
+{% import 'bootstrap/wtf.html' as wtf %}
 
 <h2>Choose Week</h2>
 
 {% block content %}
-    <form action="" method="post" novalidate>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+<!--     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
             {{ form.choose_week.label }}
             {{ form.choose_week() }}
         </p>
         <p>{{ form.submit() }}</p>
-    </form>
+    </form> -->
 {% endblock %}
 
 
 
 <h2>Week {{ week }}, Team Scores</h2>
-    <table border="1">
-
+    <table class="table" style="width: 40%">
+        <thead>
         <tr>
             <th>Username</th>
             <th>Score</th>
         </tr>
-
+        </thead>
+        <tbody>
         {% for x in team_rows %}
             <tr>
             {% for i in x %}
@@ -39,13 +45,14 @@
             {% endfor %}
             </tr>
         {% endfor %}
+        </tbody>
 
     </table>
 
 
 <h2>Week {{ week }}, Player Scores</h2>
-    <table border="1">
-
+    <table class="table">
+        <thead>
         <tr>
             <th>Name</th>
             <th>Owner</th>
@@ -59,6 +66,8 @@
             <th>Callahans</th>
             <th>Score</th>
         </tr>
+        </thead>
+        <tbody>
 
         {% for x in rows %}
             <tr>
@@ -67,7 +76,7 @@
             {% endfor %}
             </tr>
         {% endfor %}
-
+        </tbody>
     </table>
 
 </body>
