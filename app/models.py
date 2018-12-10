@@ -215,6 +215,8 @@ class PlayerWeeklyStats(db.Model):
     def reset():
         try:
             db.session.execute('DELETE FROM player_weekly_stats')
+            db.session.execute('DELETE FROM player_active')
+            db.session.execute('DELETE FROM team_scores')
             db.session.commit()
 
         except Exception as e:
@@ -229,7 +231,6 @@ class Settings(db.Model):
     def reset():
         try:
             db.session.execute('UPDATE settings SET active = 0')
-            db.session.execute('UPDATE "user" SET cum_score = 0')
             db.session.commit()
 
         except Exception as e:
