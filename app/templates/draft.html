@@ -7,6 +7,9 @@
 <body>
 
 {% include "header.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
 {#    Implement drafting logic, only can do if a draft hasn't been done before  #}
 <h1>Welcome to the draft page!</h1>
 
@@ -23,10 +26,15 @@
 {% endif %}
 
 {% if is_active == 1 %}
-<h1>Draft Player</h1>
 
 {% block content2 %}
-    <form action="" method="post" novalidate>
+    <h2>Draft Player</h2>
+    <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+<!--     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
             {{ form.player_id.label }}
@@ -37,19 +45,22 @@
             {{ form.user_id() }}
         </p>
         <p>{{ form.submit() }}</p>
-    </form>
+    </form> -->
 {% endblock %}
 
 
 <h2>Currently Drafted</h2>
 
-    <table border="1">
+    <table class="table">
+      <thead>
         <tr>
             <th>Username</th>
             {% for x in range(max) %}
                 <th>Player {{ x + 1 }}</th>
             {% endfor %}
         </tr>
+      </thead>
+      <tbody>
         {% for user in draftees %}
         <tr>
             <td><b>{{ user }}</b></td>
@@ -58,6 +69,7 @@
             {% endfor %}
         </tr>
         {% endfor %}
+      </tbody>
     </table>
 
 {% endif %}

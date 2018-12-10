@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Standings</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/standings.css" media="screen" /> -->
 </head>
 <body>
 
@@ -16,13 +17,14 @@
 {% endif %}
 
 
-    <table border="1">
-
+    <table class="table" style="width: 400px;">
+      <thead>
         <tr>
             <th>Username</th>
             <th>Overall Score</th>
         </tr>
-
+      </thead>
+      </tbody>
         {% for x in standings %}
 
         <tr>
@@ -30,8 +32,8 @@
                 <td>{{ i }}</td>
             {% endfor %}
         </tr>
-
         {% endfor %}
+      </tbody>
     </table>
 
 </body>
