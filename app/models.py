@@ -310,3 +310,8 @@ class TeamScores(db.Model):
     def __repr__(self):
         return '<TeamScores {}>'.format(self.user_id)
 
+class Weeks(db.Model):
+    week_number = db.Column(db.Integer, primary_key=True)
+
+    def __repr__(self):
+        return '<Weeks {}>'.format(self.week_number)
